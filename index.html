@@ -30,7 +30,7 @@
           </div>
       </header>
       <!--This is a navigation bar which will guide the user of the page-->
-      <nav class="navigator">
+      <nav>
           <ul class="menu">
               <li><a href="#">Levels</a></li>
               <li><a href="#">Instructions</a></li>
@@ -43,20 +43,26 @@
       <section class="Time-content">
         <div class="timer">
             <h2>
-                Running Time
+                Running Time <br>
+                00:00:00
             </h2>
+           
         </div>
         <div class="text-content">
 
         </div>
       </section>
       <!--This is the game holder section,loaded with images to display-->
-      <section class="game-area">
+      <section class="game_area">
+
+        <div id="play">
+          <h2>
+            Play 
+        </h2>
+        </div>
 
         <div class="play">
-            <h2>
-                Play 
-            </h2>
+            
             <div class="row">
                 <div class="col"></div>
                 <div class="col"></div>
@@ -88,7 +94,7 @@
       <section class="scores">
           <div>
               <div class="score1">
-                  Game scored: 0
+               Game Score: 0
               </div>
               <div class="score2">
                 Game lost: 0
@@ -97,15 +103,33 @@
 
       </section>
 
-      <footer>
-          <div class="social-lonks">
-              <ul>
-                  <li>facebook</li>
-                  <li>email</li>
-                  <li>github</li>
-              </ul>
-
-          </div>
+      <footer id="foot">
+        <div id="social-links">
+          <ul>
+            <li>
+              <a href="#" target="_blank">
+                <i class="fab fa-email"></i>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+  
+            </li>
+            <li>
+              <a href="#" aria-label="go to the top of th page">
+                <i class="fas fa-home"></i>
+              </a>
+            </li>
+          </ul>
+          <p class="copy_right">
+            &#169 by Rashid J. Bar Aldo 2021 <span>
+              <i class="fa fa-envelope" id="mail">Email: rashj40@gmail.com</i>
+            </span>
+          </p>
+        </div>
       </footer>
   </body>
 </html>
