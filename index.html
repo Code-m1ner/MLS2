@@ -32,7 +32,13 @@
       <!--This is a navigation bar which will guide the user of the page-->
       <nav>
           <ul class="menu">
-              <li><a href="#">Levels</a></li>
+              <li><a href="#"><span>
+                  <summary>Levels</summary>
+                  <li>Easy</li>
+                  <li>Standard</li>
+                  <li>Hard</li>
+                </a></li>
+              </span>
               <li><a href="#">Instructions</a></li>
               <li><a href="#">Submit</a></li>
               <li><a href="#">Contacts</a></li>
@@ -56,36 +62,37 @@
       <section class="game_area">
 
         <div id="play">
-          <h2>
-            Play 
+          <h2 class="play">
+           Play  <i class="fa fa-play" aria-hidden="true"></i>
+ 
         </h2>
         </div>
 
-        <div class="play">
+        <div class="game_container">
             
             <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
             </div>
             <div class="row">
-              <div class="col"></div>
-              <div class="col"></div>
-              <div class="col"></div>
-              <div class="col"></div>
+              <div class="column"></div>
+              <div class="column"></div>
+              <div class="column"></div>
+              <div class="column"></div>
             </div>
             <div class="row">
-              <div class="col"></div>
-              <div class="col"></div>
-              <div class="col"></div>
-              <div class="col"></div>
+              <div class="column"></div>
+              <div class="column"></div>
+              <div class="column"></div>
+              <div class="column"></div>
             </div>
             <div class="row">
-              <div class="col"></div>
-              <div class="col"></div>
-              <div class="col"></div>
-              <div class="col"></div>
+              <div class="column"></div>
+              <div class="column"></div>
+              <div class="column"></div>
+              <div class="column"></div>
             </div>
   
         </div>
@@ -93,43 +100,17 @@
       <!--This is a score section-->
       <section class="scores">
           <div>
-              <div class="score1">
-               Game Score: 0
-              </div>
-              <div class="score2">
-                Game lost: 0
-            </div>
+             <h2 class="score1">
+              Game Score: 0
+             </h2>
+               
+                <h2 class="score2">
+                  Game lost: 0
+                </h2>
           </div>
 
       </section>
 
-      <footer id="foot">
-        <div id="social-links">
-          <ul>
-            <li>
-              <a href="#" target="_blank">
-                <i class="fab fa-email"></i>
-              </a>
-            </li>
-            
-            <li>
-              <a href="#" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-  
-            </li>
-            <li>
-              <a href="#" aria-label="go to the top of th page">
-                <i class="fas fa-home"></i>
-              </a>
-            </li>
-          </ul>
-          <p class="copy_right">
-            &#169 by Rashid J. Bar Aldo 2021 <span>
-              <i class="fa fa-envelope" id="mail">Email: rashj40@gmail.com</i>
-            </span>
-          </p>
-        </div>
-      </footer>
+
   </body>
 </html>

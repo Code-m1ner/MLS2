@@ -20,7 +20,7 @@ body {
 .heading h1{
   float: left;
     font-size: 2rem;
-    margin-left: 8%;
+    margin-left: 13%;
     padding-top: 6%;
 }
 
@@ -30,12 +30,13 @@ body {
   float: right;
   line-height: normal;
   padding-top: 3%;
+  margin-right: 10%;
   }
   
   .menu li {
   display: inline-block;
   padding: 3px;
-  margin-right: 5px;
+  
   }
 
   .menu li a{
@@ -76,18 +77,25 @@ body {
 
 
 
-    .play {
+    .game_container {
       width: 100%;
-      height: 100%;
-      margin-top: 2%;
-     margin-left: 30%;
+      height: 500px;
+      padding-top: 3%;
+      margin-left: 30%;
+      
+      
     }
 
-    .row{
-      width: 100%;
-      /*height: 250px;*/
+    .row {
+      display: table;
+     
     }
-    .col {
+    .column {
+      width: 30%;
+      margin: 0px auto;
+    }
+
+    .column {
       height: 70px;
       width: 70px;
       padding: 10px;
