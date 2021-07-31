@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
     for (let card of cards){
        card.addEventListener("click",function() {
-           if (this.getAttribute(""))
+           if (this.getAttribute("data-type")=== "flip")
+           checkCard();
        })
     };
 })
