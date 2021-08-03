@@ -96,24 +96,32 @@ body {
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 12%;
+      perspective: 100px;
     }
     
 
-    .card {
+    .fantasy-card {
       width: calc(26% - 10px);
       height: calc(34.333% - 10px);
       display: inline-block;
       position: relative;
       transform: scale(1);
+      transform-style: preserve-3d;
+      transition: transform .5s;
      
      
     
     }
     
-    .card:active{
+    .fantasy-card:active{
       transform: scale(.97);
       transition: transform .2s;
     }
+    .fantasy-card.flip{
+      transform: rotateY(180deg);
+      
+    }
+
     .front-face {
       transform-style: preserve-3d;
       transition: all ease-in-out 1.5s ;

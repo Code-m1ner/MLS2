@@ -1,14 +1,8 @@
-
-document.addEventListener("DOMContentLoaded",function(){
-    let cards = document.getElementsByClassName("card");
-
-    for (let card of cards){
-       card.addEventListener("click",function() {
-           if (this.getAttribute("data-type")=== "flip")
-           checkCard();
-       })
-    };
-})
+const cards = document.querySelectorAll('.fantasy-card');
+function flipCard() {
+    this.classList.toggle('flip');
+}
+cards.forEach(card => card.addEventListener('click',flipCard));
 
 
 function runGame() {
