@@ -84,31 +84,30 @@ body {
        
      }
     
-
+     
 
 
 
 
     .game_container {
-      width: 600px;
+      width: 640px;
       height: 450px;
       margin:auto;
       display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 12%;
+     flex-wrap: wrap;
+      padding: 20px;
       perspective: 100px;
     }
     
 
     .fantasy-card {
-      width: calc(26% - 10px);
-      height: calc(34.333% - 10px);
+      width: calc(25% - 10px);
+      height: calc(31.333% - 10px);
       display: inline-block;
       position: relative;
       transform: scale(1);
       transform-style: preserve-3d;
       transition: transform .5s;
-     
      
     
     }
@@ -122,13 +121,15 @@ body {
       
     }
 
-    .front-face {
-      transform-style: preserve-3d;
-      transition: all ease-in-out 1.5s ;
-    }
+  
     .front-face, .back-face {
-      border-radius: 5%;
       position: absolute;
+      padding: 20px;
+      backface-visibility: hidden;
+    }
+
+    .front-face {
+    transform: rotateY(180deg);
     }
 
     .scores{
