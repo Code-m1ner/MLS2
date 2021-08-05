@@ -1,56 +1,81 @@
 const cards = document.querySelectorAll('.fantasy-card');
 
 let hasFlippedCard=false;
+let lockDeck = false;
 let firstCard,secondCard;
 
 
 function flipCard() {
-    this.classList.toggle('flip');
+    if(lockDeck) return;
+    if(this === firstCard) return;
+
+    this.classList.add('flip');
     
     if (!hasFlippedCard){
         //first click
         hasFlippedCard = true;
         firstCard = this;
 
+        return;
         
-    }   else {
+    }   
         // second click
-        hasFlippedCard = false;
+    
         secondCard = this;
         
-        // card matching
-       if (firstCard.dataset.card === secondCard.dataset.card)
+        checkForMatch();
+
+}
+
+    // card matching
+
+function checkForMatch () {
+
+    if (firstCard.dataset.card === secondCard.dataset.card)
        {
-           // got it!
-           firstCard.removeEventListener('click',flipCard);
-           secondCard.removeEventListener('click',flipCard);
+           disableCards();
 
-       } else {
-           //not a match
-           setTimeout(() => {
-           firstCard.classList.remove('flip');
-           secondCard.classList.remove('flip');
-           }, 1500);
+       }    else {
+           unflipCards();
        }
-       
-    }
-    
 }
+           
+function disableCards () {
+
+    firstCard.removeEventListener('click',flipCard);
+    secondCard.removeEventListener('click',flipCard);
+
+    resetDeck();
+}
+
+
+    // If not a match
+
+function unflipCards () {
+    lockDeck = true;
+
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+        resetDeck();
+        
+    }, 1500);
+}
+ 
+function resetDeck () {
+    [hasFlippedCard,lockDeck] = [false, false];
+    [firstCard,secondCard] = [null, null];
+}
+
+ 
+(function shuffle() {
+    cards.forEach(card => {
+        let randompos = Math.floor(Math.random() *12)
+        card.style.order = randompos;
+    })
+})();
+
 cards.forEach(card => card.addEventListener('click',flipCard));
-
-
-function runGame() {
-
-}
-
-function runTime() {
-
-}
-
-
-function checkCard() {
-
-}
 
 function incrementScore(){
 
