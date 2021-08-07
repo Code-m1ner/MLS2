@@ -108,3 +108,43 @@ function displayTime(second) {
   }
 
 
+  
+
+// get mode element
+var mode = document.getElementById('simpleMode');
+// get open mode button
+var modeBtn = document.getElementById('modeBtn');
+// close button
+var closeBtn = document.getElementsByClassName('closeBtn')[0]
+// adding a click eventListener
+modeBtn.addEventListener('click',openMode);
+closeBtn.addEventListener('click',closeMode);
+// eventListener to outside click
+window.addEventListener('click',clickout)
+
+ function openMode(){
+     mode.style.display = 'block';
+ }
+
+ function closeMode(){
+    mode.style.display = 'none';
+}
+
+function clickout(e){
+    if(e.target == mode){
+        mode.style.display = 'none';
+    }
+    
+}
+
+
+
+var dropbtn = document.getElementsByClassName('dropbtn');
+
+var myDropdown = document.getElementsByClassName('dropdown');
+
+//addidn event listeners 
+dropbtn.addEventListener('click',dropbtn);
+myDropdown.addEventListener('click',dropdown);
+
+
