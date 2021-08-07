@@ -81,3 +81,30 @@ function incrementScore(){
 
 }
 
+
+// running time for the game
+const timeM = document.querySelector('h2');
+let timeSecond = 90;
+
+
+displayTime(timeSecond)
+
+const runningTime = setInterval (() => {
+    timeSecond--;
+    displayTime(timeSecond);
+    if(timeSecond <= 0 || timeSecond < 1) {
+        endTime();
+        clearInterval(runningTime);
+    }
+},1000)
+
+function displayTime(second) {
+    let min = Math.floor(second / 60);
+    let sec = Math.floor(second % 60);
+    timeM.innerHTML = `${min < 10 ? '0': ''}${min}:${sec < 10 ? '0': ''}${sec}`
+}
+  function endTime() {
+      timeM.innerHTML = 'Time Out!';
+  }
+
+
