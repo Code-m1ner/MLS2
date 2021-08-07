@@ -139,12 +139,11 @@ function clickout(e){
 
 
 
-var dropbtn = document.getElementsByClassName('dropbtn');
-
-var myDropdown = document.getElementsByClassName('dropdown');
-
-//addidn event listeners 
-dropbtn.addEventListener('click',dropbtn);
-myDropdown.addEventListener('click',dropdown);
-
-
+// get form element
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
