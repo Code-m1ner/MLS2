@@ -61,14 +61,16 @@ body {
     /*-----Time countDown ---*/
       
     .timer{
-      width: 30%;
+      padding-left: 40%;
+      padding-top: 5%;
       margin: 0px auto;
+     
      
       
       
     }
     .timer h2 {
-     margin-top: 70px;
+    font-size: 30px;
       
     }
      
@@ -135,10 +137,7 @@ body {
     transform: rotateY(180deg);
     }
 
-    img{
-      border-radius: 5%;
-    }
-
+    
     .scores{
       width: 100%;
       height: 100%;
