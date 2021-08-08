@@ -77,10 +77,6 @@ function resetDeck () {
 
 cards.forEach(card => card.addEventListener('click',flipCard));
 
-function incrementScore(){
-
-}
-
 
 // running time for the game
 const timeM = document.querySelector('h2');
@@ -147,3 +143,5 @@ function openForm() {
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
+
+  
