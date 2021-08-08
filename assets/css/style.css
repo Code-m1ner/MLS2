@@ -7,8 +7,8 @@
 body {
   
   font-family: 'Roboto', sans-serif;
-  background-color: aegean rgba(76, 225, 225, 0.689);
-    
+  background-color: #3ec1b3;
+    box-sizing: border-box;
     
 }
 
@@ -87,7 +87,7 @@ body {
      }
     
      .game-area {
-       height: 640px;
+       height: 600px;
        width: 100%;
      }
 
@@ -95,8 +95,8 @@ body {
 
 
     .game_container {
-      width: 650px;
-      height: 450px;
+      width: 600px;
+      height: 430px;
       margin:auto;
       display: flex;
      flex-wrap: wrap;
@@ -106,8 +106,8 @@ body {
     
 
     .fantasy-card {
-      width: calc(25% - 10px);
-      height: calc(33.333% - 10px);
+      width: calc(24% - 10px);
+      height: calc(31.333% - 10px);
       display: inline-block;
       position: relative;
       transform: scale(1);
@@ -129,7 +129,8 @@ body {
   
     .front-face, .back-face {
       position: absolute;
-      padding: 20px;
+      padding: 5px;
+      border-radius: 5%;
       backface-visibility: hidden;
     }
 
@@ -329,7 +330,18 @@ body {
 
 
     @media screen and (max-width: 300px) {
-      .menu {
+    
+      ul  {
         width: 100%;
-      }
+        float: right;
+        display: inline;
+      
+       
+        
+        
+        
+        }
+
+
+      
     }
