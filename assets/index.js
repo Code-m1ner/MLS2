@@ -1,3 +1,9 @@
+window.onload = function(){
+    
+}
+
+
+
 const cards = document.querySelectorAll('.fantasy-card');
 
 let hasFlippedCard=false;
@@ -100,7 +106,7 @@ function displayTime(second) {
     timeM.innerHTML = `${min < 10 ? '0': ''}${min}:${sec < 10 ? '0': ''}${sec}`
 }
   function endTime() {
-      timeM.innerHTML = 'Time Out!';
+        timeM.innerHTML = 'Time out';
   }
 
 
@@ -144,4 +150,10 @@ function openForm() {
     document.getElementById("myForm").style.display = "none";
   }
 
+
+
+
+
+
+  // reset game 
   
