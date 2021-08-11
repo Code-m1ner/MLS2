@@ -2,7 +2,7 @@ window.onload = function(){
     
 }
 
-
+document.getElementsByClassName('fantasy-card');
 
 const cards = document.querySelectorAll('.fantasy-card');
 
