@@ -1,24 +1,38 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0;
 }
 
-body {
-  
-  font-family: 'Roboto', sans-serif;
-  background-color: #3ec1b3;
+*,
+
+*::before,
+
+*::after {
+  box-sizing: inherit;
+}
     
-    
+html {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Open Sans", sans-seif;
+  font-size: 62.5%;
+  letter-spacing: 0.5rem;
+  margin: 0;
+  background: hsl(0,0%,90%) url("chrome://global/skin/media/imagedoc-lightnoise.png");
+  color: #222; 
 }
 
 
 /*--- navbar styling ----*/
+.head-container {
+  position: fixed;
+}
 
 .menu {
   width: 600px;
   height: 100%;
-  float: right;
 
   }
 
@@ -41,62 +55,117 @@ body {
 
 
 
-/* --------- title of the game */
+/* --------- score section of the game */
 
-.title{
+h1 {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.6em;
+
+}
+
+
+.score-panel {
+  font-size: 1.4em;
+  padding: 1em 0 2em;
+  padding-left: 35em;
+}
+
+.stars > li {
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.moves {
+  padding: 0.5em;
+}
+
+.replay-btn {
+  background: #000;
+}
+
+.time {
+  border-radius: 0.5em;
+  color: #000;
+  margin: 00.5em;
+  padding: 0.5em;
+}
+
+.time h3{
+  font-size: 1em;
+}
+
+.text {
+  padding-top: 10em;
+  padding-left: 45em;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100%;
-  width: 600px;
-  }
-.title h1{
-  font-size: 35px;
-  padding-top: 4rem;
-  margin-left: 20rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: whitesmoke;
-  }
+  background-color: rgb(46, 61, 73);
+  background-color: rgba(46, 61, 73, 0.5);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin: 5% auto;
+  border: 0.8em solid rgb(151, 98, 63);
+  padding-right: 2em;
+  width: 80%;
+
+}
+
+.close {
+  align-self: flex-end;
+  color: #28e;
+  font-size: 5em;
+
+}
+.close:hover,
+.close:focus {
+  color: #5cf;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 
 
 
-    /*-----Time countDown ---*/
-      
-    .timer{
-      padding-left: 33rem;
-      padding-top: 1.5em;
-  }
-    .timer h2 {
-    font-size: 30px;
-      
-    }
-     
-    .random_btn{
-      width: 10%;
-      margin: 0px auto;
-      
-    }
-    .random_btn .btn {
-      margin-top: 15px;
-     
-      font-size: 30px;
-       
-     }
-    
-     .game-area {
-       height: 600px;
-       width: 100%;
-     }
 
+   
 
 
 
     .game_container {
-      width: 600px;
-      height: 450px;
-      margin: auto;
-      display: inline-block;
-      perspective: 100px;
-      padding-left: 20rem;
+    
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  height: 35em;
+  margin-bottom: 6em;
+  padding: 0.5em;
+  width: 45em;
     }
     
 
@@ -110,7 +179,7 @@ body {
       transition: transform .5s;
      
     
-    }
+    }*/
     
     .fantasy-card:active{
       transform: scale(.97);

@@ -29,9 +29,10 @@
 
   <body>
 
-    <header>
-      <div class="nav">
-        <!--This is a navigation bar which will guide the user of the page-->
+     <!--This is a navigation bar which will guide the user of the page-->
+     <div class="head-container">
+
+      <header class="header">
           <ul class="menu">
               <li>
                 <label for="level" class="levels">Level</label>
@@ -76,37 +77,54 @@
               </li>
               
           </ul>
+      </header>
+    </div>
+
+    <div class="text">
+      <h1>
+        Memory Game
+    </h1>
+    </div>
+
+      
+  <!--This is an update tab for the game-->
+  <section class="score-panel">
+    <ul id="starslist" class="stars">
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+        <li><i class="fa fa-star"></i></li>
+
+    </ul>
+    <span><h3 class="moves">0 Moves</h3></span>
+    <span><h3 class="time">Time 00:00</h3></span>
+    <span><i class="fa fa-repeat">
+      <button class="replay-btn"></button>
+    </i></span>
+    
+</section>
+<!--game win modal section-------->
+<section class="win-Game-modal">
+
+  <!--Modal-->
+
+  <div id="modal" class="modal">
+
+      <!--Modal content-->
+
+      <div class="modal-content">
+
+          <span class="close">&times;</span>
+
+          <h2>Congratulations!!</h2>
+          <p>You have found all the matching Cards and you have Won!!!!!</p>
 
       </div>
 
-    </header>
-      <!--This is the title which will contain the logo of the home page-->
-      <section id="title_content">
-          <div class="title">
-              <h1>
-                  Fantasy Card
-              </h1>
+  </div>
 
-          </div>
-      </section>
-      <!--This is a Time countdown of the game's section-->
-      <section>
-        <div class="timer">
-            <h2>
-                Running Time <br>
-                00:00
-            </h2>
-           
-        </div>
-      </section>
-      <!--This is the game holder section,loaded with images to display-->
-      <section class="game-area">
-
-        <div  class="random_btn">
-          <button onclick="resetGame()" class="btn">
-            <i class="fas fa-random"></i>
-          </button>
-        </div>
+</section>
+<!--This is the game holder section,loaded with images to display-->
+      <section class="game">
 
         <div class="game_container">
             
@@ -183,19 +201,6 @@
   
         </div>
       </section>
-      <!--This is a score section-->
-      <section class="scores">
-          <div>
-             <h2 class="score1">
-               Move's Score: 0
-             </h2>
-               
-                <h2 class="score2">
-                  Game lost: 0
-                </h2>
-          </div>
-        </section>
-
 
       <script src="./assets/index.js"></script>
   </body>
