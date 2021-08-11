@@ -31,7 +31,7 @@ body{
 }
 
 .menu {
-  width: 600px;
+  width: 500px;
   height: 100%;
 
   }
@@ -76,7 +76,7 @@ p {
 .score-panel {
   font-size: 1.4em;
   padding: 1em 0 2em;
-  padding-left: 35em;
+  padding-left: 37em;
 }
 
 .stars > li {
@@ -162,7 +162,7 @@ p {
   margin: auto;
   justify-content: space-around;
   align-items: center;
-  height: 35em;
+  height: 45em;
   margin-bottom: 6em;
   padding: 0.5em;
   width: 45em;
@@ -171,7 +171,7 @@ p {
 
     .fantasy-card {
       width: calc(24% - 10px);
-      height: calc(31.333% - 10px);
+      height: calc(28.333% - 10px);
       display: inline-block;
       position: relative;
       transform: scale(1);
@@ -179,7 +179,7 @@ p {
       transition: transform .5s;
      
     
-    }*/
+    }
     
     .fantasy-card:active{
       transform: scale(.97);
@@ -202,29 +202,7 @@ p {
     transform: rotateY(180deg);
     }
 
-    
-    .scores{
-      width: 100%;
-      height: 100%;
-      
-    }
-    .score1{
-      float: left;
-      padding-left: 20%;
-      
-    }
-    .score2{
-      float: right;
-      padding-right: 20%;
-    }
-
-
    
-
-
-
-
-    
 
     .button {
       background-color: coral;
@@ -394,31 +372,34 @@ p {
 
 
 @media screen and (max-width: 480px) {
+  
   .menu {
-    width: 400px;
-  height: 100%;
-  
-   
-  }
-  
-  .title {
-    width: 400px;
+
     height: 100%;
-    padding-top: 15px;
-    padding-left: 4rem;
   }
-  .title h1 {
-    margin: auto;
-    
+
+  .text {
+    padding-top: 9em;
+    padding-left: 7em;
   }
-  .game-area {
-    
-    height: 340px;
+
+  .score-panel{
+    font-size: 1.4em;
+    padding: 1em 0 2em;
+    padding-left: 0px;
+    padding-left: 9em;
   }
-  
+
   .game_container{
     
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    height: 37em;
+    margin-bottom: 6em;
+    padding: 0.5em;
 
   }
   .front-face,.back-face {
