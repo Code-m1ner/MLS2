@@ -371,7 +371,7 @@ p {
 
 
 
-@media screen and (min-width: 370px) {
+@media screen and (max-width: 500px) {
   
   
   .menu {
