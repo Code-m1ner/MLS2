@@ -371,11 +371,21 @@ p {
 
 
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 370px) {
+  
   
   .menu {
 
     height: 100%;
+  }
+  .menu li {
+
+   padding: 0;
+  }
+
+  .button {
+    padding: 0.9em 0.9em;
+    border: 0;
   }
 
   .text {
@@ -390,18 +400,11 @@ p {
     padding-left: 9em;
   }
 
-  .game_container{
-    
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: space-around;
-    align-items: center;
-    height: 37em;
-    margin-bottom: 6em;
-    padding: 0.5em;
-
-  }
+  .game_container {
+   
+    height: 36em;
+    width: auto;
+}
   .front-face,.back-face {
     width: 85px;
     height: 85px;
