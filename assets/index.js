@@ -2,9 +2,13 @@ window.onload = function(){
     
 }
 
-document.getElementsByClassName('fantasy-card');
-
 const cards = document.querySelectorAll('.fantasy-card');
+// getting all elements from the DOM
+let moves = 0;
+const timeM = document.querySelector('.moves');
+let Second = 0; minute = 0, hour = 0;
+let interval;
+const replayBtn = document.querySelector('.replay');
 
 let hasFlippedCard=false;
 let lockDeck = false;
@@ -85,8 +89,7 @@ cards.forEach(card => card.addEventListener('click',flipCard));
 
 
 // running time for the game
-const timeM = document.querySelector('h2');
-let timeSecond = 90;
+
 
 
 displayTime(timeSecond)
