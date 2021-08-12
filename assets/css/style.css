@@ -104,7 +104,7 @@ p {
 }
 
 .text {
-  padding-top: 10em;
+  padding-top: 9.4em;
   padding-left: 45em;
 }
 
@@ -371,7 +371,58 @@ p {
 
 
 
-@media screen and (max-width: 500px) {
+@media only screen and (max-width: 980px)
+
+        /* For ipads/tablets: */
+                
+{
+  
+  
+  .menu {
+
+    height: 100%;
+  }
+  .menu li {
+
+   padding: 0;
+  }
+
+  .button {
+    padding: 0.9em 0.9em;
+    border: 0;
+  }
+
+  .text {
+    padding-top: 9em;
+    padding-left: 30em;
+  }
+
+  .score-panel{
+    font-size: 1.4em;
+    padding: 1em 0 2em;
+    padding-left: 24.5em;
+  }
+
+  .game_container {
+   
+    height: 38em;
+    width: 48em;
+    padding: 0;
+    
+}
+  .front-face,.back-face {
+    width: 95px;
+    height: 95px;
+    
+    
+  }
+
+}
+
+@media only screen and (max-width: 768px)
+
+        /* For mobile phones: */
+{
   
   
   .menu {
@@ -403,16 +454,17 @@ p {
   .game_container {
    
     height: 36em;
-    width: auto;
+    width: 41em;
+    padding: 0;
+    justify-content: safe;
 }
   .front-face,.back-face {
     width: 85px;
     height: 85px;
     
+    
   }
 
 }
 
-
-      
     
