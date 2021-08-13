@@ -5,9 +5,7 @@ window.onload = function(){
 const cards = document.querySelectorAll('.fantasy-card');
 // getting all elements from the DOM
 let moves = 0;
-const timeM = document.querySelector('.moves');
-let Second = 0; minute = 0, hour = 0;
-let interval;
+
 const replayBtn = document.querySelector('.replay');
 
 let hasFlippedCard=false;
@@ -87,34 +85,33 @@ function resetDeck () {
 
 cards.forEach(card => card.addEventListener('click',flipCard));
 
+//setting the time countDown
+let countdown;
+function timer(seconds) {
+    const now = Date.now();
+    const then = now + seconds * 1000;
+    displayTimeLeft(seconds);
+    displayEndTime(then);
+   
 
-// running time for the game
-
-
-
-displayTime(timeSecond)
-
-const runningTime = setInterval (() => {
-    timeSecond--;
-    displayTime(timeSecond);
-    if(timeSecond <= 0 || timeSecond < 1) {
-        endTime();
-        clearInterval(runningTime);
-    }
-},1000)
-
-function displayTime(second) {
-    let min = Math.floor(second / 60);
-    let sec = Math.floor(second % 60);
-    timeM.innerHTML = `${min < 10 ? '0': ''}${min}:${sec < 10 ? '0': ''}${sec}`
-}
-  function endTime() {
-        timeM.innerHTML = 'Time out';
-  }
+    countdown = setInterval(() => {
+        const secondsLeft = Math.round((then - Date.now()) / 1000);
+        if(secondsLeft <= 0) {
+            clearInterval(countdown);
+            return;
+        }
+        // displaying it
+        displayTimeLeft(secondsLeft);
 
 
-  
+    }, 1000)}
 
+function displayTimeLeft(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainderSeconds = seconds % 60;
+    const display = `${minutes} : ${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+    document.time = display;}
+    
 // get mode element
 var mode = document.getElementById('simpleMode');
 // get open mode button
