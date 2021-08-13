@@ -407,7 +407,7 @@ p {
   .game_container {
    
     height: 38em;
-    width: 48em;
+    width: 100%;
     padding: 0;
     
 }
@@ -456,7 +456,7 @@ p {
   .game_container {
    
     height: 36em;
-    width: 41em;
+    width: 100%;
     padding: 0;
     justify-content: safe;
 }
