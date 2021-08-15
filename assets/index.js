@@ -95,7 +95,7 @@ const timerText = document.getElementById('timer-text');
 const btnStart = document.getElementById('btn-start');
 const btnPause = document.getElementById('btn-pause');
 
-
+// craeting the function for the time --------------
 function startTimer() {
     seconds++;
 
@@ -132,7 +132,6 @@ btnPause.addEventListener('click',function () {
   
 });
 
-let stars = document.getElementById('star-list')
 
 
 /*// reseting the interval
@@ -141,7 +140,23 @@ function resetCounter() {
     timerText.innerHTML = count;
 }
 */
+ // setting up the moves count ---------------------------
+ let turnedCard = document.getElementById('memo-card');
+ const backFace = document.getElementsByClassName('back-face');
+ const frontFace = document.getElementsByClassName('front-face');
+ let btnMove = document.getElementsById('btn-move')
+ var move = pickRandom(['back-face', 'front-face']);
 
+ function moveCard() {
+
+        document.getElementById("btn-move");
+        if (btnMove==1) {
+            move +=1;
+            document.getElementById('btn-move').innerHTML = "Move" + 0;
+        }
+ }
+ 
+ 
 
 // reseting the game
 
