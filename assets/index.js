@@ -4,7 +4,7 @@ window.onload = function(){
 
 const cards = document.querySelectorAll('.fantasy-card');
 // getting all elements from the DOM
-let moves = 0;
+
 
 const replayBtn = document.querySelector('.replay');
 
@@ -85,32 +85,72 @@ function resetDeck () {
 
 cards.forEach(card => card.addEventListener('click',flipCard));
 
-//setting the time countDown
-let countdown;
-function timer(seconds) {
-    const now = Date.now();
-    const then = now + seconds * 1000;
-    displayTimeLeft(seconds);
-    displayEndTime(then);
-   
-
-    countdown = setInterval(() => {
-        const secondsLeft = Math.round((then - Date.now()) / 1000);
-        if(secondsLeft <= 0) {
-            clearInterval(countdown);
-            return;
-        }
-        // displaying it
-        displayTimeLeft(secondsLeft);
+// getting acces to the DOM elements
+let seconds = 0;
+let minutes = 0;
+let countdown = 4;
 
 
-    }, 1000)}
+const timerText = document.getElementById('timer-text');
+const btnStart = document.getElementById('btn-start');
+const btnPause = document.getElementById('btn-pause');
 
-function displayTimeLeft(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const remainderSeconds = seconds % 60;
-    const display = `${minutes} : ${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-    document.time = display;}
+
+function startTimer() {
+    seconds++;
+
+    if(seconds / 60 === 1) {
+        seconds = 0;
+        minutes++;
+    
+
+    
+    }
+    document.getElementById('timer-text').innerHTML ='Time'  + minutes + ':' + seconds
+}
+
+function startGame() {
+    // starting the countdown with the button click
+    interval = window.setInterval(startTimer,1000);
+    document.getElementById('btn-strat').innerHTML = "start Game";
+    countdown -=1;
+    pauseGame();
+}
+
+function pauseGame() {
+    // pausing the coundown with the button click
+    window.clearInterval(interval);
+    document.getElementById('btn-pause').innerHTML = "pause Game";
+}
+
+
+//setting the time interval
+
+// clearing the interval
+btnPause.addEventListener('click',function () {
+      clearInterval(intervalID);
+  
+});
+
+let stars = document.getElementById('star-list')
+
+
+/*// reseting the interval
+function resetCounter() {
+    count = 0;
+    timerText.innerHTML = count;
+}
+*/
+
+
+// reseting the game
+
+ 
+
+
+
+
+
     
 // get mode element
 var mode = document.getElementById('simpleMode');

@@ -89,17 +89,17 @@
       
   <!--This is an update tab for the game-->
   <section class="score-panel">
-    <ul id="starslist" class="stars">
+    <ul id="star-list" class="stars">
         <li><i class="fa fa-star"></i></li>
         <li><i class="fa fa-star"></i></li>
         <li><i class="fa fa-star"></i></li>
 
     </ul>
-    <span><h3 class="moves">0 Moves</h3></span>
-    <span><h3 id="timer-text">Time 00:00</h3></span>
-    <span>
-      <button id="btn-start">Sart Game</button>
-      <button id="btn-pause">Pause Game</button>
+    
+    <span><h3 id="timer-text">Time</h3>
+      <button id="btn-start" onclick="startGame()">Sart Game</button>
+      <button id="btn-pause" onclick="pauseGame()">Pause Game</button>
+     
     </span>
     
 </section>
@@ -206,4 +206,5 @@
 
       <script src="./assets/index.js"></script>
   </body>
-</html>
+</html>var count = 20;
+
