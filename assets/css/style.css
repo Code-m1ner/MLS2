@@ -4,26 +4,24 @@
 }
 
 *,
-
 *::before,
-
 *::after {
   box-sizing: inherit;
 }
-    
+
 html {
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: "Open Sans", sans-seif;
   font-size: 62.5%;
   letter-spacing: 0.5rem;
   margin: 0;
-  background: hsl(0,0%,90%) url("chrome://global/skin/media/imagedoc-lightnoise.png");
-  color: #222; 
+  background: hsl(0, 0%, 90%)
+      url("chrome://global/skin/media/imagedoc-lightnoise.png");
+  color: #222;
 }
-
 
 /*--- navbar styling ----*/
 .head-container {
@@ -33,27 +31,20 @@ body{
 .menu {
   width: 500px;
   height: 100%;
+}
 
-  }
-
-  
-  .menu li {
+.menu li {
   display: inline-block;
   padding: 2px;
   padding-top: 2%;
-  
-  
-  }
+}
 
-  .menu li a{
-    display: inline;
-    text-decoration: none;
-    font-size: large;
-    font-weight: bold;
-    
-    }
-
-
+.menu li a {
+  display: inline;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
 
 /* --------- score section of the game */
 
@@ -69,10 +60,7 @@ h2 {
 
 p {
   font-size: 1.6em;
-
 }
-
-
 
 .score-panel {
   font-size: 1.4em;
@@ -100,7 +88,7 @@ p {
   padding: 0.5em;
 }
 
-.time h3{
+.time h3 {
   font-size: 1em;
 }
 
@@ -108,7 +96,6 @@ p {
   padding-top: 9.4em;
   padding-left: 45em;
 }
-
 
 .modal {
   display: none;
@@ -132,14 +119,12 @@ p {
   border: 0.8em solid rgb(151, 98, 63);
   padding-right: 2em;
   width: 80%;
-
 }
 
 .close {
   align-self: flex-end;
   color: #28e;
   font-size: 5em;
-
 }
 .close:hover,
 .close:focus {
@@ -148,16 +133,7 @@ p {
   cursor: pointer;
 }
 
-
-
-
-
-   
-
-
-
-    .game_container {
-    
+.game_container {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -167,135 +143,136 @@ p {
   margin-bottom: 6em;
   padding: 0.5em;
   width: 45em;
-    }
-    
+}
 
-    .fantasy-card {
-      width: calc(24% - 10px);
-      height: calc(28.333% - 10px);
-      display: inline-block;
-      position: relative;
-      transform: scale(1);
-      transform-style: preserve-3d;
-      transition: transform .5s;
-     
-    
-    }
-    
-    .fantasy-card:active{
-      transform: scale(.97);
-      transition: transform .2s;
-    }
-    .fantasy-card.flip{
-      transform: rotateY(180deg);
-      
-    }
+.fantasy-card {
+  width: calc(24% - 10px);
+  height: calc(28.333% - 10px);
+  display: inline-block;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
 
-  
-    .front-face, .back-face {
-      position: absolute;
-      padding: 5px;
-      border-radius: 5%;
-      backface-visibility: hidden;
-    }
+.fantasy-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+.fantasy-card.flip {
+  transform: rotateY(180deg);
+}
 
-    .front-face {
-    transform: rotateY(180deg);
-    }
+.front-face,
+.back-face {
+  position: absolute;
+  padding: 5px;
+  border-radius: 5%;
+  backface-visibility: hidden;
+}
 
-   
+.front-face {
+  transform: rotateY(180deg);
+}
 
-    .button {
-      background-color: coral;
-      padding: 1em 2em;
-      border: 0;
-    }
-    .button:hover {
-      background: #333;
-    }
-    .mode {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.5);
-    }
-    .mode-content {
-      background-color: #f4f4f4;
-      margin: 20%;
-      padding: 20px;
-      width: 50%;
-      box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
-      animation: modeopen;
-      animation: 2s;
-    }
-    .closeBtn{
-      color: #ccc;
-      float: right;
-      font-size: 30px;
-    } 
-    .closeBtn:hover,.closeBtn:focus{
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    @keyframes modeopen {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
+.button {
+  background-color: coral;
+  padding: 1em 2em;
+  border: 0;
+  margin-top: 5%;
+}
+.button:hover {
+  background: #333;
+}
+.mode {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mode-content {
+  background-color: #f4f4f4;
+  margin: 20%;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  animation: modeopen;
+  animation: 2s;
+}
+.closeBtn {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+}
+.closeBtn:hover,
+.closeBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+@keyframes modeopen {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
 
-    .button {
-      background-color: coral;
-      padding: 1em 2em;
-      border: 0;
-    }
-    .button:hover {
-      background: #333;
-    }
-    .submit{
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.5);
-    }
-    .sub-content {
-      background-color: #f4f4f4;
-      margin: 20%;
-      padding: 20px;
-      width: 50%;
-      box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
-      animation: modeopen;
-      animation: 5s;
-    }
-    .closeBtn{
-      color: #ccc;
-      float: right;
-      font-size: 30px;
-    } 
-    .closeBtn:hover,.closeBtn:focus{
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    @keyframes modeopen {
-      from { opacity: 0;}
-      to { opacity: 1;}
-    }
-    
+.button {
+  background-color: coral;
+  padding: 1em 2em;
+  border: 0;
+}
+.button:hover {
+  background: #333;
+}
+.submit {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.sub-content {
+  background-color: #f4f4f4;
+  margin: 20%;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  animation: modeopen;
+  animation: 5s;
+}
+.closeBtn {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+}
+.closeBtn:hover,
+.closeBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+@keyframes modeopen {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
 
-
-
-
-    /* Button used to open the contact form - fixed at the bottom of the page */
+/* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
   color: white;
@@ -311,7 +288,6 @@ p {
 
 /* The popup form - hidden by default */
 .form-popup {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -320,7 +296,7 @@ p {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Add styles to the form container */
@@ -328,12 +304,13 @@ p {
   max-width: 300px;
   padding: 30px;
   margin: auto;
-  
+
   background-color: white;
 }
 
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
+.form-container input[type="text"],
+.form-container input[type="password"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 30px 0;
@@ -342,20 +319,21 @@ p {
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
@@ -365,109 +343,84 @@ p {
 }
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
+.form-container .btn:hover,
+.open-button:hover {
   opacity: 1;
 }
 
-
-
-
-@media only screen and (max-width: 980px)
-
-        /* For ipads/tablets: */
-                
-{
-  
-  
+@media only screen and (max-width: 980px) /* For ipads/tablets: */ {
   .menu {
-
-    height: 100%;
-    width: 100%;
+      height: 100%;
+      width: 100%;
   }
   .menu li {
-
-   padding: 0;
+      padding: 0;
   }
 
   .button {
-    padding: 0.9em 0.9em;
-    border: 0;
+      padding: 0.9em 0.9em;
+      border: 0;
   }
 
   .text {
-    padding-top: 9em;
-    padding-left: 30em;
+      padding-top: 9em;
+      padding-left: 30em;
   }
 
-  .score-panel{
-    font-size: 1.4em;
-    padding: 1em 0 2em;
-    padding-left: 24.5em;
+  .score-panel {
+      font-size: 1.4em;
+      padding: 1em 0 2em;
+      padding-left: 24.5em;
   }
 
   .game_container {
-   
-    height: 38em;
-    width: 100%;
-    padding: 0;
-    
-}
-  .front-face,.back-face {
-    width: 95px;
-    height: 95px;
-    
-    
+      height: 38em;
+      width: 100%;
+      padding: 0;
   }
-
+  .front-face,
+  .back-face {
+      width: 95px;
+      height: 95px;
+  }
 }
 
-@media only screen and (max-width: 768px)
-
-        /* For mobile phones: */
-{
-  
-  
+@media only screen and (max-width: 768px) /* For mobile phones: */ {
   .menu {
-
-    height: 100%;
-    width: 100%;
+      height: 100%;
+      width: 100%;
   }
   .menu li {
-
-   padding: 0;
+      padding: 0;
   }
 
   .button {
-    padding: 0.9em 0.9em;
-    border: 0;
+      padding: 0.9em 0.9em;
+      border: 0;
   }
 
   .text {
-    padding-top: 9em;
-    padding-left: 7em;
+      padding-top: 9em;
+      padding-left: 7em;
   }
 
-  .score-panel{
-    font-size: 1.4em;
-    padding: 1em 0 2em;
-    padding-left: 0px;
-    padding-left: 9em;
+  .score-panel {
+      font-size: 1.4em;
+      padding: 1em 0 2em;
+      padding-left: 0px;
+      padding-left: 9em;
   }
 
   .game_container {
-   
-    height: 36em;
-    width: 100%;
-    padding: 0;
-    justify-content: safe;
-}
-  .front-face,.back-face {
-    width: 85px;
-    height: 85px;
-    
-    
+      height: 36em;
+      width: 100%;
+      padding: 0;
+      justify-content: safe;
   }
-
+  .front-face,
+  .back-face {
+      width: 85px;
+      height: 85px;
+  }
 }
-
     

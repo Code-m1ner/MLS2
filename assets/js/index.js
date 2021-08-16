@@ -10,7 +10,9 @@ const replayBtn = document.querySelector('.replay');
 
 let hasFlippedCard=false;
 let lockDeck = false;
-let firstCard,secondCard;
+let firstCard;
+let secondCard;
+let cardsMatched = 0;
 
 
 function flipCard() {
@@ -28,9 +30,7 @@ function flipCard() {
         
     }   
         // second click
-    
         secondCard = this;
-        
         checkForMatch();
 
 }
@@ -38,21 +38,20 @@ function flipCard() {
     // card matching
 
 function checkForMatch () {
-
-    if (firstCard.dataset.card === secondCard.dataset.card)
-       {
-           disableCards();
-
-       }    else {
-           unflipCards();
-       }
+    if (firstCard.dataset.card === secondCard.dataset.card) {
+        disableCards();
+        cardsMatched++;
+        if (cardsMatched == 8) {
+            document.getElementById('win-game-modal').style.display = 'block';
+        }
+    } else {
+        unflipCards();
+    }
 }
            
 function disableCards () {
-
     firstCard.removeEventListener('click',flipCard);
     secondCard.removeEventListener('click',flipCard);
-
     resetDeck();
 }
 
@@ -67,7 +66,7 @@ function unflipCards () {
         secondCard.classList.remove('flip');
         resetDeck();
         
-    }, 1500);
+    }, 1200);
 }
  
 function resetDeck () {
@@ -85,8 +84,8 @@ function resetDeck () {
 
 cards.forEach(card => card.addEventListener('click',flipCard));
 
-// getting acces to the DOM elements
-let seconds = 0;
+// getting access to the DOM elements
+let seconds = 60;
 let minutes = 0;
 let countdown = 4;
 
@@ -97,31 +96,37 @@ const btnPause = document.getElementById('btn-pause');
 
 // craeting the function for the time --------------
 function startTimer() {
-    seconds++;
-
-    if(seconds / 60 === 1) {
-        seconds = 0;
-        minutes++;
-    
-
-    
+    seconds--;
+    let stringSeconds = '';
+    if (seconds < 10) {
+        stringSeconds = '0' + seconds.toString();
+    } else {
+        stringSeconds = seconds;
     }
-    document.getElementById('timer-text').innerHTML ='Time'  + minutes + ':' + seconds
+    if (seconds > 0) {
+        document.getElementById('time-counter').innerHTML = stringSeconds;
+    }
+    // check if time runs out
+    if (seconds == 0) {
+        // do some function to say you lost
+        alert('You lost!');
+        // Show a pop-up that says play again / take me back to the main page
+
+        document.getElementById('time-counter').innerHTML = '0';
+    }
 }
 
 function startGame() {
+    document.getElementById('game-box').style.display = 'block';
     // starting the countdown with the button click
     interval = window.setInterval(startTimer,1000);
-    document.getElementById('btn-strat').innerHTML = "start Game";
-    countdown -=1;
-    pauseGame();
 }
 
-function pauseGame() {
-    // pausing the coundown with the button click
-    window.clearInterval(interval);
-    document.getElementById('btn-pause').innerHTML = "pause Game";
-}
+// function pauseGame() {
+//     // pausing the coundown with the button click
+//     window.clearInterval(interval);
+//     document.getElementById('btn-pause').innerHTML = "pause Game";
+// }
 
 
 //setting the time interval
@@ -161,10 +166,6 @@ function resetCounter() {
 // reseting the game
 
  
-
-
-
-
 
     
 // get mode element
@@ -208,7 +209,3 @@ function openForm() {
 
 
 
-
-
-  // reset game 
-  
