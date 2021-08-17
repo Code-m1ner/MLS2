@@ -24,45 +24,13 @@
                 Memory Game
             </h1> 
         </section>
-        <!-- <div class="head-container">
-            <header class="header">
-                <ul class="menu">
-                    <li>
-                        <button id="modeBtn" class="button">Instructions</button>
-                        <div id="simpleMode" class="mode">
-                            <div class="mode-content"> <span class="closeBtn">&times;</span>
-                                <p> Hi and welcome to your Game! </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        
-                        
-                    </li>
-                </ul>
-            </header>
-        </div> -->
-        <!-- Choose your level -->
-        <!-- <section style="text-align: center;">
-            <label for="level" class="levels">Level</label>
-            <br>
-            <select id="easy" name="easy">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="Hard">Hard</option>
-            </select>
-        </section> -->
-        <!--This is an update tab for the game-->
-        <!-- <section class="score-panel">
-            <ul id="star-list" class="stars">
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-            </ul>
-        </section> -->
+        
+
         <section style="text-align: center; margin-bottom: 5%;">
-            <div>
-                <button id="modeBtn" class="button">Instructions</button>
+            
+                <button id="modeBtn" class="button" onclick="openManual()">Instructions</button>
+               
+               </div>
             </div>
             <div>
                 <button id="modeBtn" class="button" onclick="openForm()">Open Form</button>
@@ -70,17 +38,38 @@
             <div>
                 <button id="btn-start" class="button" onclick="startGame()">Start Game</button>
             </div>
-            <!-- <button id="btn-pause" onclick="pauseGame()">Pause Game</button> -->
+            
+            
         </section>
+        <!--A pop up div for the game levels-->
+        <div class="levels" id="level-div">
+                
+            <select id="easy" name="easy">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+            </div>
+        </div>
+        <!--A pop up div for the game instructions-->
+        <div class="manual">
+
+           <div class="inst-container" id="myManual">
+   
+            <p>
+               Hello and welcome to the memory Game!
+            </p>
+           </div>
+        </div>    
         <!-- Form pop-up for feedback on game -->
         <div class="form-popup" id="myForm">
             <form action="/action_page.php" class="form-container">
-                <h1>Login</h1>
-                <label for="email"><b>Email</b></label>
+                <h1>feedback</h1>
+                <label for="email"><h3>Email</h3></label>
                 <input type="text" placeholder="Enter Email" name="email" required>
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <button type="submit" class="btn">Login</button>
+                <label for="comment"><h3>Comment</h3></label>
+                <textarea name="comment" id="" cols="30" rows="10"></textarea>
+                <button type="submit" class="btn">SubMit</button>
                 <button type="button" class="btn cancel" onclick="closeForm();">Close</button>
             </form>
         </div>           
@@ -89,10 +78,18 @@
             <!--Modal-->
             <div id="win-game-modal" class="modal">
                 <!--Modal content-->
-                <div class="modal-content"> <span class="close">&times;</span>
-                    <h2>Congratulations!!</h2>
+                <div class="modal-content">
+                  <button class="play-bTn" onclick="reload()">Play Again</button> 
+                    <h2>Congratulations!!</h2> 
                     <p>You have found all the matching Cards and you have Won!</p>
-                    <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif">
+                    <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif" height="100">
+                    
+                </div>
+                <div>
+                    <p id="retry">
+                        Ouch you ran out of time but you almost got it
+                    </p>
+                    <button id="btn.retry" class="retry" onclick="tryAgain()">Try Again</button>
                 </div>
             </div>
         </section>
@@ -171,9 +168,18 @@
             </div>
         </section>
         <footer>
-            Facebook
-            Instagram
-            YouTube
+            <ul class="social-links">
+              <li>
+                <i class="fab fa-facebook" style="font-size: 30px;"></i>
+              </li>
+              <li>
+                <i class="fab fa-instagram" style="font-size: 30px;"></i>
+              </li>
+              <li>
+                <i class="fab fa-youtube" style="font-size: 30px;"></i>
+              </li>
+            </ul>
+            
         </footer>
         <script src="./assets/js/index.js"></script>
     </body>

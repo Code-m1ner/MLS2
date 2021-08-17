@@ -5,9 +5,6 @@ window.onload = function(){
 const cards = document.querySelectorAll('.fantasy-card');
 // getting all elements from the DOM
 
-
-const replayBtn = document.querySelector('.replay');
-
 let hasFlippedCard=false;
 let lockDeck = false;
 let firstCard;
@@ -91,8 +88,6 @@ let countdown = 4;
 
 
 const timerText = document.getElementById('timer-text');
-const btnStart = document.getElementById('btn-start');
-const btnPause = document.getElementById('btn-pause');
 
 // craeting the function for the time --------------
 function startTimer() {
@@ -110,6 +105,7 @@ function startTimer() {
     if (seconds == 0) {
         // do some function to say you lost
         alert('You lost!');
+        document.getElementById('retry').innerText;
         // Show a pop-up that says play again / take me back to the main page
 
         document.getElementById('time-counter').innerHTML = '0';
@@ -120,54 +116,15 @@ function startGame() {
     document.getElementById('game-box').style.display = 'block';
     // starting the countdown with the button click
     interval = window.setInterval(startTimer,1000);
-}
-
-// function pauseGame() {
-//     // pausing the coundown with the button click
-//     window.clearInterval(interval);
-//     document.getElementById('btn-pause').innerHTML = "pause Game";
-// }
-
-
-//setting the time interval
-
-// clearing the interval
-btnPause.addEventListener('click',function () {
-      clearInterval(intervalID);
-  
-});
-
-
-
-/*// reseting the interval
-function resetCounter() {
-    count = 0;
-    timerText.innerHTML = count;
-}
-*/
- // setting up the moves count ---------------------------
- let turnedCard = document.getElementById('memo-card');
- const backFace = document.getElementsByClassName('back-face');
- const frontFace = document.getElementsByClassName('front-face');
- let btnMove = document.getElementsById('btn-move')
- var move = pickRandom(['back-face', 'front-face']);
-
- function moveCard() {
-
-        document.getElementById("btn-move");
-        if (btnMove==1) {
-            move +=1;
-            document.getElementById('btn-move').innerHTML = "Move" + 0;
-        }
- }
- 
- 
-
-// reseting the game
-
- 
-
     
+}
+
+// paly again function on the win game mode button
+function relaod(){
+    document.getElementById("play-bTn").window.location.reload();
+}
+
+
 // get mode element
 var mode = document.getElementById('simpleMode');
 // get open mode button
@@ -191,6 +148,7 @@ window.addEventListener('click',clickout)
 function clickout(e){
     if(e.target == mode){
         mode.style.display = 'none';
+
     }
     
 }
@@ -206,6 +164,12 @@ function openForm() {
     document.getElementById("myForm").style.display = "none";
   }
 
+  function openLevel(){
+    document.getElementById("level-div").style.display = "block";
+  }
+  function openManual(){
+    document.getElementById("myManual").style.display = "block";
+  }
 
 
 
