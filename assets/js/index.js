@@ -82,7 +82,7 @@ function resetDeck () {
 cards.forEach(card => card.addEventListener('click',flipCard));
 
 // getting access to the DOM elements
-let seconds = 60;
+let seconds = 80;
 let minutes = 0;
 let countdown = 4;
 
@@ -105,7 +105,7 @@ function startTimer() {
     if (seconds == 0) {
         // do some function to say you lost
         alert('You lost!');
-        document.getElementById('retry').innerText;
+        document.getElementById('retry').innerHTML;
         // Show a pop-up that says play again / take me back to the main page
 
         document.getElementById('time-counter').innerHTML = '0';
@@ -126,28 +126,24 @@ function relaod(){
 
 
 // get mode element
-var mode = document.getElementById('simpleMode');
+var manual = document.getElementById('myManual');
 // get open mode button
-var modeBtn = document.getElementById('modeBtn');
-// close button
+var manBtn = document.getElementById('manBtn');
+
 var closeBtn = document.getElementsByClassName('closeBtn')[0]
 // adding a click eventListener
-modeBtn.addEventListener('click',openMode);
-closeBtn.addEventListener('click',closeMode);
-// eventListener to outside click
-window.addEventListener('click',clickout)
+manBtn.addEventListener('click',openMan);
 
- function openMode(){
-     mode.style.display = 'block';
+// eventListener to outside click for insruction's div
+window.addEventListener('click',clickout);
+//function to display the instructions div
+ function openMan(){
+     manual.style.display = 'block';
  }
-
- function closeMode(){
-    mode.style.display = 'none';
-}
-
+// allows the user to click anywhere on the opened div of the instruction to close it
 function clickout(e){
-    if(e.target == mode){
-        mode.style.display = 'none';
+    if(e.target == manual){
+        manual.style.display = 'none';
 
     }
     
@@ -159,17 +155,16 @@ function clickout(e){
 function openForm() {
     document.getElementById("myForm").style.display = "block";
   }
-  
+  // aclose button of the feedback
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
-  }
-
+    
+}
+// getting the leves pop up div to display
   function openLevel(){
     document.getElementById("level-div").style.display = "block";
   }
-  function openManual(){
-    document.getElementById("myManual").style.display = "block";
-  }
+  
 
 
 

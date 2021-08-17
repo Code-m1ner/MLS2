@@ -27,10 +27,9 @@
         
 
         <section style="text-align: center; margin-bottom: 5%;">
-            
-                <button id="modeBtn" class="button" onclick="openManual()">Instructions</button>
+            <div>
+                <button id="manBtn" class="button" >Instructions</button>
                
-               </div>
             </div>
             <div>
                 <button id="modeBtn" class="button" onclick="openForm()">Open Form</button>
@@ -43,7 +42,7 @@
         </section>
         <!--A pop up div for the game levels-->
         <div class="levels" id="level-div">
-                
+                <h2>Game's Levels</h2>
             <select id="easy" name="easy">
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
@@ -53,9 +52,9 @@
         </div>
         <!--A pop up div for the game instructions-->
         <div class="manual">
-
+           
            <div class="inst-container" id="myManual">
-   
+            <h2>Game's Instructions</h2>
             <p>
                Hello and welcome to the memory Game!
             </p>
@@ -65,15 +64,15 @@
         <div class="form-popup" id="myForm">
             <form action="/action_page.php" class="form-container">
                 <h1>feedback</h1>
-                <label for="email"><h3>Email</h3></label>
+                <label for="email">Email</label>
                 <input type="text" placeholder="Enter Email" name="email" required>
-                <label for="comment"><h3>Comment</h3></label>
-                <textarea name="comment" id="" cols="30" rows="10"></textarea>
+                <label for="comment"><b>Comment</b></label>
+                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
                 <button type="submit" class="btn">SubMit</button>
                 <button type="button" class="btn cancel" onclick="closeForm();">Close</button>
             </form>
         </div>           
-        <!--game win modal section-------->
+        <!--game win modal section-->
         <section>
             <!--Modal-->
             <div id="win-game-modal" class="modal">
@@ -82,7 +81,7 @@
                   <button class="play-bTn" onclick="reload()">Play Again</button> 
                     <h2>Congratulations!!</h2> 
                     <p>You have found all the matching Cards and you have Won!</p>
-                    <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif" height="100">
+                    <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif">
                     
                 </div>
                 <div>
@@ -163,7 +162,7 @@
                 </div>
                 <div class="fantasy-card" data-card="fantasy"> 
                     <img class="front-face" src="./assets/images/fantasy-.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100"> 
+                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
                 </div>
             </div>
         </section>

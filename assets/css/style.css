@@ -36,13 +36,15 @@ body {
 .inst-container{
   display: none;
   position: fixed;
-  z-index: 1;
-  left: 14em;
-  top: 8em;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+z-index: 1;
+left: 35em;
+top: 7em;
+height: 44em;
+width: 45em;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+padding: 4em;
 }
 #retry {
   display: none;
