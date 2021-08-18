@@ -126,7 +126,7 @@ function relaod(){
 
 
 // get mode element
-var manual = document.getElementById('myManual');
+var manual = document.getElementById('manual-head');
 // get open mode button
 var manBtn = document.getElementById('manBtn');
 
@@ -167,4 +167,13 @@ function openForm() {
   
 
 
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
+
+
+overlay.addEventListener('click',() => {
+    const modals = document.querySelectorAll('#myForm.active')
+    modals.forEach(modal => {
+        closeModal(modal);
+    })
+})
 

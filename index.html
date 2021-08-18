@@ -32,7 +32,7 @@
                
             </div>
             <div>
-                <button id="modeBtn" class="button" onclick="openForm()">Open Form</button>
+                <button id="modeBtn" class="button" onclick="openForm()" >Open Form</button>
             </div>
             <div>
                 <button id="btn-start" class="button" onclick="startGame()">Start Game</button>
@@ -51,13 +51,19 @@
             </div>
         </div>
         <!--A pop up div for the game instructions-->
-        <div class="manual">
+        <div class="manual" id="manual-head">
            
-           <div class="inst-container" id="myManual">
-            <h2>Game's Instructions</h2>
-            <p>
-               Hello and welcome to the memory Game!
-            </p>
+            <div class="manual-title">
+                <h2>Game's Instructions</h2>
+            </div>
+           <div class="manual-body" id="myManual">
+            
+                <span>Every card has to be fliped within the given seconds</span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            
            </div>
         </div>    
         <!-- Form pop-up for feedback on game -->
@@ -77,19 +83,22 @@
             <!--Modal-->
             <div id="win-game-modal" class="modal">
                 <!--Modal content-->
-                <div class="modal-content">
-                  <button class="play-bTn" onclick="reload()">Play Again</button> 
-                    <h2>Congratulations!!</h2> 
-                    <p>You have found all the matching Cards and you have Won!</p>
+                <div class="modal-header">
+                    <div class="title">Congratulations!!</div>
+                    <button data-play-button class="play-bTn" onclick="reload()">Play Again</button>  
+                </div>    
+                    <div class="modal-body">
+                        <p>You have found all the matching Cards and you have Won!</p>
                     <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif">
                     
-                </div>
-                <div>
-                    <p id="retry">
-                        Ouch you ran out of time but you almost got it
-                    </p>
-                    <button id="btn.retry" class="retry" onclick="tryAgain()">Try Again</button>
-                </div>
+                    </div>
+                <button id="btn.retry" class="retry" onclick="tryAgain()">Try Again</button>
+            </div>
+            
+            <div>
+                <p id="retry">
+                    Ouch you ran out of time but you almost got it
+               </p>
             </div>
         </section>
         <!--This is the game holder section,loaded with images to display-->

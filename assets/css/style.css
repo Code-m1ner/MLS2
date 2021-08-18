@@ -23,29 +23,21 @@ body {
 }
 
 .levels{
-  display: none;
   position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.inst-container{
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  max-width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  background-color:white;
+  background-color: rgba(46, 61, 73, 0.5);
   display: none;
-  position: fixed;
-z-index: 1;
-left: 35em;
-top: 7em;
-height: 44em;
-width: 45em;
-overflow: auto;
-background-color: rgba(0, 0, 0, 0.5);
-color: white;
-padding: 4em;
 }
+
 #retry {
   display: none;
 }
@@ -65,58 +57,71 @@ p {
   font-size: 1.6em;
 }
 
-.time {
-  border-radius: 0.5em;
-  color: #000;
-  margin: 00.5em;
-  padding: 0.5em;
-}
-
-.time h3 {
-  font-size: 1em;
-}
-
-.text {
-  padding-top: 9.4em;
-  padding-left: 45em;
-}
-
+/*styling the modal win div*/
 .modal {
-  display: none;
   position: fixed;
-  z-index: 99;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(46, 61, 73);
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  max-width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  background-color:white;
   background-color: rgba(46, 61, 73, 0.5);
+  display: none;
+}
+.modal-header .play-bTn {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: orangered;
+}
+.modal-body p{
+  color: whitesmoke;
 }
 
-.modal-content {
+/*styling the instruction's pop up div*/
+.manual {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  max-width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  background-color:white;
+  background-color: rgba(46, 61, 73, 0.5);
+  display: none;
+}
+.manual-title {
+  padding: 10px 15px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  margin: 5% auto;
-  border: 0.8em solid rgb(151, 98, 63);
-  padding-right: 2em;
- 
+  border-bottom: 2px solid black;
 }
-
-.close {
-  align-self: flex-end;
-  color: #28e;
-  font-size: 5em;
+.manual-title h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
 }
-.close:hover,
-.close:focus {
-  color: #5cf;
+.manual-body{
+  font-size: 1.30rem;
+  font-weight: bold;
+  color: white;
+}
+.manual-body span{
   text-decoration: none;
-  cursor: pointer;
 }
 
+
+
+/*styling the game section*/
 .game{
   display: none;
 }
