@@ -11,15 +11,49 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 body {
   font-family: "roboto", sans-seif;
   font-size: 62.5%;
   margin: 0;
-  background: hsl(0, 0%, 90%)
-      url("chrome://global/skin/media/imagedoc-lightnoise.png");
+  background-image:url("/assets/images/fantasy-forest-bg.jpg");
+  background-repeat: no-repeat;
+  /* background-size: 100% 100%; */
   color: #222;
+}
+
+i {
+  font-size: 350%;
+  transition: color 1s;
+  color: black;
+}
+
+i:hover {
+  color: #007c4e;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.6em;
+}
+
+.game-view-port {
+  margin: 2.5%;
+  background-color: rgba(126, 126, 126, 0.466);
+  height: 100%;
+  border-radius: 10px;
+  padding: 2.5%;
 }
 
 .levels{
@@ -40,21 +74,6 @@ body {
 
 #retry {
   display: none;
-}
-
-
-h1 {
-  font-size: 3em;
-  font-weight: 400;
-}
-
-h2 {
-  font-size: 2.5em;
-  font-weight: 600;
-}
-
-p {
-  font-size: 1.6em;
 }
 
 /*styling the modal win div*/
@@ -82,6 +101,10 @@ p {
   color: whitesmoke;
 }
 
+.instruction-item:hover {
+  cursor: pointer;
+}
+
 /*styling the instruction's pop up div*/
 .manual {
   position: fixed;
@@ -98,6 +121,7 @@ p {
   background-color: rgba(46, 61, 73, 0.5);
   display: none;
 }
+
 .manual-title {
   padding: 10px 15px;
   display: flex;
@@ -105,21 +129,22 @@ p {
   align-items: center;
   border-bottom: 2px solid black;
 }
+
 .manual-title h2 {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
 }
+
 .manual-body{
-  font-size: 1.30rem;
+  font-size: 0.8rem;
   font-weight: bold;
-  color: white;
-}
-.manual-body span{
-  text-decoration: none;
 }
 
-
+.manual-body i {
+  font-weight: 100;
+  font-size: 0.8rem;
+}
 
 /*styling the game section*/
 .game{
@@ -172,9 +197,10 @@ p {
   padding: 1em 2em;
   border: 0;
   margin-top: 5%;
+  transition: background 1s;
 }
 .button:hover {
-  background: #333;
+  background: #007c4e;
 }
 .mode {
   display: none;
@@ -196,11 +222,13 @@ p {
   animation: modeopen;
   animation: 2s;
 }
+
 .closeBtn {
   color: #ccc;
   float: right;
   font-size: 30px;
 }
+
 .closeBtn:hover,
 .closeBtn:focus {
   color: #000;
@@ -216,14 +244,6 @@ p {
   }
 }
 
-.button {
-  background-color: coral;
-  padding: 1em 2em;
-  border: 0;
-}
-.button:hover {
-  background: #333;
-}
 .submit {
   display: none;
   position: fixed;
@@ -284,11 +304,12 @@ p {
   z-index: 1;
   left: 0;
   top: 0;
-  padding-top: 10%;
+  padding-top: 15%;
   height: 100%;
   width: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  display: none;
 }
 
 /* Add styles to the form container */
@@ -296,7 +317,6 @@ p {
   max-width: 300px;
   padding: 30px;
   margin: auto;
-
   background-color: white;
 }
 
@@ -325,7 +345,6 @@ p {
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom: 10px;
   opacity: 0.8;
 }
 
@@ -339,17 +358,29 @@ p {
 .open-button:hover {
   opacity: 1;
 }
+
+.form-container label {
+  font-size: large;
+}
+
+.button-boxes {
+  margin-top: 5%;
+}
 /*styling the socila links on the foot*/
 .social-links li {
-display: inline;
-padding: 4em;
-
+  display: inline;
+  margin-left: 5%;
+  margin-right: 5%;
 }
+
 .social-links{
   text-align: center;
 }
 
 @media only screen and (max-width: 980px) /* For ipads/tablets: */ {
+  footer {
+    margin-top: 10%;
+  }
   .menu {
       height: 100%;
       width: 100%;
@@ -360,6 +391,8 @@ padding: 4em;
 
   .button {
       padding: 0.9em 0.9em;
+      /* padding-top: 10%; */
+      margin-top: 10%;
       border: 0;
   }
 
@@ -387,6 +420,11 @@ padding: 4em;
 }
 
 @media only screen and (max-width: 768px) /* For mobile phones: */ {
+  footer {
+    margin-top: 20%;
+    margin-bottom: 10%;
+  }
+
   .menu {
       height: 100%;
       width: 100%;
@@ -397,6 +435,52 @@ padding: 4em;
 
   .button {
       padding: 0.9em 0.9em;
+      margin-top: 10%;
+      border: 0;
+  }
+
+  .text {
+      padding-top: 9em;
+      padding-left: 7em;
+  }
+
+  .score-panel {
+      font-size: 1.4em;
+      padding: 1em 0 2em;
+      padding-left: 0px;
+      padding-left: 9em;
+  }
+
+  .game_container {
+      height: 36em;
+      width: 100%;
+      padding: 0;
+      justify-content: safe;
+  }
+  .front-face,
+  .back-face {
+      width: 85px;
+      height: 85px;
+  }
+}
+    
+@media only screen and (max-width: 400px) /* For mobile phones: */ {
+  footer {
+    margin-top: 25%;
+    margin-bottom: 15%;
+  }
+
+  .menu {
+      height: 100%;
+      width: 100%;
+  }
+  .menu li {
+      padding: 0;
+  }
+
+  .button {
+      padding: 0.9em 0.9em;
+      margin-top: 15%;
       border: 0;
   }
 
