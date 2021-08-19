@@ -1,40 +1,73 @@
-window.onload = function(){
-    
-}
-
+// All constant variables assigned here
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const cards = document.querySelectorAll('.fantasy-card');
-// getting all elements from the DOM
+const timerText = document.getElementById('timer-text');
+let manual = document.getElementById('manual-head'); // get mode element
+let manBtn = document.getElementById('manBtn'); // get open mode button
+let closeBtn = document.getElementsByClassName('closeBtn')[0]
 
-let hasFlippedCard=false;
+// All flexible variables assigned here
+let hasFlippedCard = false;
 let lockDeck = false;
 let firstCard;
 let secondCard;
 let cardsMatched = 0;
 
+let seconds = 80;
+let minutes = 0;
+let countdown = 4;
 
+/* Onload call functions */
+// Shuffle cards
+(function shuffle() {
+    cards.forEach(card => {
+        let randompos = Math.floor(Math.random() * 12)
+        card.style.order = randompos;
+    })
+})();
+
+cards.forEach(
+    card => card.addEventListener('click', flipCard)
+);
+
+// Event listener for form modal
+// overlay.addEventListener('click', () => {
+//     const modals = document.querySelectorAll('#myForm.active')
+//     modals.forEach(modal => {
+//         closeModal(modal);
+//     })
+// });
+
+// adding a click eventListener to manBtn
+manBtn.addEventListener('click', openMan);
+
+// eventListener to outside click for instruction's div
+window.addEventListener('click', clickOut);
+
+/* Event specific functions below */
+// Flip card function
 function flipCard() {
-    if(lockDeck) return;
-    if(this === firstCard) return;
+    if (lockDeck) return;
+    if (this === firstCard) return;
 
     this.classList.add('flip');
-    
-    if (!hasFlippedCard){
+
+    if (!hasFlippedCard) {
         //first click
         hasFlippedCard = true;
         firstCard = this;
 
         return;
-        
-    }   
-        // second click
-        secondCard = this;
-        checkForMatch();
+
+    }
+    // second click
+    secondCard = this;
+    checkForMatch();
 
 }
 
-    // card matching
-
-function checkForMatch () {
+// card matching
+function checkForMatch() {
     if (firstCard.dataset.card === secondCard.dataset.card) {
         disableCards();
         cardsMatched++;
@@ -45,51 +78,33 @@ function checkForMatch () {
         unflipCards();
     }
 }
-           
-function disableCards () {
-    firstCard.removeEventListener('click',flipCard);
-    secondCard.removeEventListener('click',flipCard);
+
+// If matched: function to disable card click-flip
+function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
     resetDeck();
 }
 
-
-    // If not a match
-
-function unflipCards () {
+// If not a match
+function unflipCards() {
     lockDeck = true;
 
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
         resetDeck();
-        
+
     }, 1200);
 }
- 
-function resetDeck () {
-    [hasFlippedCard,lockDeck] = [false, false];
-    [firstCard,secondCard] = [null, null];
+
+
+function resetDeck() {
+    [hasFlippedCard, lockDeck] = [false, false];
+    [firstCard, secondCard] = [null, null];
 }
 
- 
-(function shuffle() {
-    cards.forEach(card => {
-        let randompos = Math.floor(Math.random() *12)
-        card.style.order = randompos;
-    })
-})();
-
-cards.forEach(card => card.addEventListener('click',flipCard));
-
-// getting access to the DOM elements
-let seconds = 80;
-let minutes = 0;
-let countdown = 4;
-
-
-const timerText = document.getElementById('timer-text');
-
-// craeting the function for the time --------------
+// Creating the function for the time
 function startTimer() {
     seconds--;
     let stringSeconds = '';
@@ -112,68 +127,82 @@ function startTimer() {
     }
 }
 
-function startGame() {
+function startGame(level) {
+    closeLevel();
+    if (level == 'easy') {
+        seconds = 80;
+    } else if (level == 'medium') {
+        seconds = 60;
+    } else {
+        seconds = 30;
+    }
+    // Adjust hte heading styling
+    document.getElementById('heading-context').style.marginTop = '2%';
+    document.getElementById('heading-context').style.marginBottom = '0px';
+    // Hide main menu
+    document.getElementById('menu-selection-buttons').style.display = 'none';
+    // Show game screen
     document.getElementById('game-box').style.display = 'block';
     // starting the countdown with the button click
-    interval = window.setInterval(startTimer,1000);
-    
+    interval = window.setInterval(
+        startTimer, 
+        1000
+    );
 }
 
-// paly again function on the win game mode button
-function relaod(){
-    document.getElementById("play-bTn").window.location.reload();
+// Play again function on the win game mode button
+function relaod() {
+    // document.getElementById("play-bTn").window.location.reload();
 }
 
-
-// get mode element
-var manual = document.getElementById('manual-head');
-// get open mode button
-var manBtn = document.getElementById('manBtn');
-
-var closeBtn = document.getElementsByClassName('closeBtn')[0]
-// adding a click eventListener
-manBtn.addEventListener('click',openMan);
-
-// eventListener to outside click for insruction's div
-window.addEventListener('click',clickout);
 //function to display the instructions div
- function openMan(){
-     manual.style.display = 'block';
- }
+function openMan() {
+    manual.style.display = 'block';
+}
 // allows the user to click anywhere on the opened div of the instruction to close it
-function clickout(e){
-    if(e.target == manual){
+function clickOut(e) {
+    if (e.target == manual) {
         manual.style.display = 'none';
-
     }
-    
 }
 
-
-
-// get form element
+// Open the form
 function openForm() {
     document.getElementById("myForm").style.display = "block";
-  }
-  // aclose button of the feedback
-  function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-    
 }
-// getting the leves pop up div to display
-  function openLevel(){
-    document.getElementById("level-div").style.display = "block";
-  }
-  
 
+// Close button of the feedback
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
 
-const closeModalButtons = document.querySelectorAll('[data-close-button]');
+// Close button of the feedback
+function closeLevel() {
+    document.getElementById("levels").style.display = "none";
+}
 
+// getting the levels pop up div to display
+function openLevel() {
+    document.getElementById("levels").style.display = "block";
+}
 
-overlay.addEventListener('click',() => {
-    const modals = document.querySelectorAll('#myForm.active')
-    modals.forEach(modal => {
-        closeModal(modal);
-    })
-})
+// Open button of the feedback
+function openInstruction() {
+    document.getElementById("manual-head").style.display = "block";
+}
 
+// Close button of the feedback
+function closeInstruction() {
+    document.getElementById("manual-head").style.display = "none";
+}
+
+// Show instructable image
+function showInstructableImage(instructable) {
+    // Hide all
+    document.getElementById('img-difficulty-level').style.display = 'none';
+    document.getElementById('img-click-a-card').style.display = 'none';
+    document.getElementById('img-matched').style.display = 'none';
+    document.getElementById('img-time-management').style.display = 'none';
+    // Display specific
+    document.getElementById('img-' + instructable).style.display = 'inline';
+}
