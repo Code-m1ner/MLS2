@@ -202,6 +202,10 @@ p {
 .button:hover {
   background: #007c4e;
 }
+.refresh{
+  font-size: 40px;
+  margin: auto;
+}
 .mode {
   display: none;
   position: fixed;
