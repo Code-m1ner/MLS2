@@ -11,185 +11,200 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <!--Stylesheet css link-->
         <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
-        <script 
-            src="https://code.jquery.com/jquery-3.6.0.js" 
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
-            crossorigin="anonymous"
-        ></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
     <body>
-        <!--This is a navigation bar which will guide the user of the page-->
-        <section style="text-align: center; margin-top: 3%; margin-bottom: 5%;">
-            <h1>
-                Memory Game
-            </h1> 
-        </section>
-        
-
-        <section style="text-align: center; margin-bottom: 5%;">
-            <div>
-                <button id="manBtn" class="button" >Instructions</button>
-               
+        <div class="game-view-port">
+            <!--This is a navigation bar which will guide the user of the page-->
+            <section id="heading-context" style="text-align: center; margin-top: 3%; margin-bottom: 5%;">
+                <h1>
+                    Memory Game
+                </h1>
+            </section>
+            <section id="menu-selection-buttons" style="text-align: center; margin-bottom: 5%;">
+                <div>
+                    <button id="manBtn" class="button" onclick="openInstruction();">Instructions</button>
+                </div>
+                <div>
+                    <button id="modeBtn" class="button" onclick="openForm();">Open Form</button>
+                </div>
+                <div>
+                    <button id="btn-start" class="button" onclick="openLevel();">Start Game</button>
+                </div>
+            </section>
+            <!--A pop up div for the game levels-->
+            <div id="levels" class="form-popup">
+                <div class="form-container" style="text-align: center;">
+                    <h2>Choose the game difficulty</h2>
+                    <div>
+                        <button id="easy" class="button" onclick="startGame('easy');" style="width: 80%;">Easy</button>
+                    </div>
+                    <div>
+                        <button id="medium" class="button" onclick="startGame('medium');" style="width: 80%;">Medium</button>
+                    </div>
+                    <div>
+                        <button id="hard" class="button" onclick="startGame('hard');" style="width: 80%;">Hard</button>
+                    </div>
+                    <div class="button-boxes">
+                        <button type="button" class="btn cancel" onclick="closeLevel();" style="width: 80%;">Close</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <button id="modeBtn" class="button" onclick="openForm()" >Open Form</button>
+            <!--A pop up div for the game instructions-->
+            <div id="manual-head" class="form-popup" style="padding-top: 10%;">
+                <div class="form-container" style="text-align: center;">
+                    <h2>Game instructions</h2>
+                    <div class="manual-body">
+                        <i>Each item is clickable</i>
+                        <div style="margin-top: 10px; margin-bottom: 10px;">
+                            <h3 class="instruction-item" onclick="showInstructableImage('difficulty-level');">Select your difficulty level</h3>
+                            <img id="img-difficulty-level" src="/assets/images/difficulty-level-example.PNG" style="width: 80%;"/>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <h3 class="instruction-item" onclick="showInstructableImage('click-a-card');">Click on a card</h3>
+                            <img id="img-click-a-card" src="/assets/images/click-a-card.PNG" style="width: 80%; display: none;"/>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <h3 class="instruction-item" onclick="showInstructableImage('matched');">Match a pair</h3>
+                            <img id="img-matched" src="/assets/images/match-the-cards.PNG" style="width: 80%; display: none;"/>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <h3 class="instruction-item" onclick="showInstructableImage('time-management');">Make sure not to run out of time</h3>
+                            <img id="img-time-management" src="/assets/images/time-management.PNG" style="width: 80%; display: none;"/>
+                        </div>
+                    </div>
+                    <div class="button-boxes">
+                        <button type="button" class="btn cancel" onclick="closeInstruction();" style="width: 80%;">Close</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <button id="btn-start" class="button" onclick="startGame()">Start Game</button>
+            <!-- Form pop-up for feedback on game -->
+            <div class="form-popup" id="myForm">
+                <form action="https://formdump.codeinstitute.net/" class="form-container">
+                    <h1 style="text-align: center;">Feedback</h1>
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <label for="comment">Comment</label>
+                    <textarea name="comment" id="comment" rows="10" style="width: 100%;"></textarea>
+                    <div class="button-boxes">
+                        <button type="submit" class="btn">SubMit</button>
+                    </div>
+                    <div class="button-boxes">
+                        <button type="button" class="btn cancel" onclick="closeForm();">Close</button>
+                    </div>
+                </form>
             </div>
-            
-            
-        </section>
-        <!--A pop up div for the game levels-->
-        <div class="levels" id="level-div">
-                <h2>Game's Levels</h2>
-            <select id="easy" name="easy">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="Hard">Hard</option>
-            </select>
-            </div>
-        </div>
-        <!--A pop up div for the game instructions-->
-        <div class="manual" id="manual-head">
-           
-            <div class="manual-title">
-                <h2>Game's Instructions</h2>
-            </div>
-           <div class="manual-body" id="myManual">
-            
-                <span>Every card has to be fliped within the given seconds</span>
-                <span></span>
-                <span></span>
-                <span></span>
-
-            
-           </div>
-        </div>    
-        <!-- Form pop-up for feedback on game -->
-        <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-                <h1>feedback</h1>
-                <label for="email">Email</label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-                <label for="comment"><b>Comment</b></label>
-                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-                <button type="submit" class="btn">SubMit</button>
-                <button type="button" class="btn cancel" onclick="closeForm();">Close</button>
-            </form>
-        </div>           
-        <!--game win modal section-->
-        <section>
-            <!--Modal-->
-            <div id="win-game-modal" class="modal">
-                <!--Modal content-->
-                <div class="modal-header">
-                    <div class="title">Congratulations!!</div>
-                    <button data-play-button class="play-bTn" onclick="reload()">Play Again</button>  
-                </div>    
+            <!--game win modal section-->
+            <section>
+                <!--Modal-->
+                <div id="win-game-modal" class="modal">
+                    <!--Modal content-->
+                    <div class="modal-header">
+                        <div class="title">Congratulations!</div>
+                        <button data-play-button class="play-bTn" onclick="reload()">Play Again</button>
+                    </div>
                     <div class="modal-body">
                         <p>You have found all the matching Cards and you have Won!</p>
-                    <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif">
-                    
+                        <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif">
                     </div>
-                <button id="btn.retry" class="retry" onclick="tryAgain()">Try Again</button>
-            </div>
-            
-            <div>
-                <p id="retry">
-                    Ouch you ran out of time but you almost got it
-               </p>
-            </div>
-        </section>
-        <!--This is the game holder section,loaded with images to display-->
-        <section id="game-box" class="game">
-            <!-- Timer section -->
-            <div style="text-align: center; margin-bottom: 4%;">
-                <h3>Time remaining</h3>
-                <h3><span id="time-counter">30</span> seconds</h3>
-            </div>
-            <div class="game_container">
-                <div class="fantasy-card" data-card="halloween">
-                    <img class="front-face" src="./assets/images/halloween.jpg" height="100" width="100" alt="">
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    <button id="btn.retry" class="retry" onclick="tryAgain()">Try Again</button>
                 </div>
-                <div class="fantasy-card" data-card="light-bulb">
-                    <img class="front-face" src="./assets/images/light-bulb.jpg" height="100" width="100" alt="">
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                <div>
+                    <p id="retry">
+                        Ouch you ran out of time but you almost got it!
+                    </p>
                 </div>
-                <div class="fantasy-card" data-card="fantasy">
-                    <img class="front-face" src="./assets/images/fantasy.jpg" height="100" width="100" alt="">
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+            </section>
+            <!--This is the game holder section,loaded with images to display-->
+            <section id="game-box" class="game">
+                <!-- Timer section -->
+                <div style="text-align: center; margin-bottom: 4%;">
+                    <h3>Time remaining</h3>
+                    <h3><span id="time-counter"></span> seconds</h3>
                 </div>
-                <div class="fantasy-card" data-card="background">
-                    <img class="front-face" src="./assets/images/background.jpg" height="100" width="100" alt="">
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                <div class="game_container">
+                    <div class="fantasy-card" data-card="halloween">
+                        <img class="front-face" src="./assets/images/halloween.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="light-bulb">
+                        <img class="front-face" src="./assets/images/light-bulb.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="fantasy">
+                        <img class="front-face" src="./assets/images/fantasy.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="background">
+                        <img class="front-face" src="./assets/images/background.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="fantasy">
+                        <img class="front-face" src="./assets/images/fantasy-.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="light-bulb">
+                        <img class="front-face" src="./assets/images/light-bulb.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class=" fantasy-card" data-card="bornholm">
+                        <img class="front-face" src="./assets/images/bornholm.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="blue">
+                        <img class="front-face" src="./assets/images/blue.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="star">
+                        <img class="front-face" src="./assets/images/star.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="background">
+                        <img class="front-face" src="./assets/images/background.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="bornholm">
+                        <img class="front-face" src="./assets/images/bornholm.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="star">
+                        <img class="front-face" src="./assets/images/star.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="fantasy">
+                        <img class="front-face" src="./assets/images/fantasy.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="halloween">
+                        <img class="front-face" src="./assets/images/halloween.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="blue">
+                        <img class="front-face" src="./assets/images/blue.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
+                    <div class="fantasy-card" data-card="fantasy">
+                        <img class="front-face" src="./assets/images/fantasy-.jpg" height="100" width="100" alt="">
+                        <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+                    </div>
                 </div>
-                <div class="fantasy-card" data-card="fantasy">
-                    <img class="front-face" src="./assets/images/fantasy-.jpg" height="100" width="100" alt="">
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
+            </section>
+            <footer>
+                <div>
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://en-gb.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="fantasy-card" data-card="light-bulb">
-                    <img class="front-face" src="./assets/images/light-bulb.jpg" height="100" width="100" alt="">
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class=" fantasy-card" data-card="bornholm"> 
-                    <img class="front-face" src="./assets/images/bornholm.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
-                </div>
-                <div class="fantasy-card" data-card="blue"> 
-                    <img class="front-face" src="./assets/images/blue.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="star"> 
-                    <img class="front-face" src="./assets/images/star.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="background"> 
-                    <img class="front-face" src="./assets/images/background.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="bornholm"> 
-                    <img class="front-face" src="./assets/images/bornholm.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="star"> 
-                    <img class="front-face" src="./assets/images/star.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="fantasy"> 
-                    <img class="front-face" src="./assets/images/fantasy.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="halloween"> 
-                    <img class="front-face" src="./assets/images/halloween.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="blue"> 
-                    <img class="front-face" src="./assets/images/blue.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-                <div class="fantasy-card" data-card="fantasy"> 
-                    <img class="front-face" src="./assets/images/fantasy-.jpg" height="100" width="100" alt=""> 
-                    <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt=""> 
-                </div>
-            </div>
-        </section>
-        <footer>
-            <ul class="social-links">
-              <li>
-                <i class="fab fa-facebook" style="font-size: 30px;"></i>
-              </li>
-              <li>
-                <i class="fab fa-instagram" style="font-size: 30px;"></i>
-              </li>
-              <li>
-                <i class="fab fa-youtube" style="font-size: 30px;"></i>
-              </li>
-            </ul>
-            
-        </footer>
+            </footer>
+        </div>
         <script src="./assets/js/index.js"></script>
     </body>
 </html>
-
