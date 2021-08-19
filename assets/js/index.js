@@ -30,13 +30,7 @@ cards.forEach(
     card => card.addEventListener('click', flipCard)
 );
 
-// Event listener for form modal
-// overlay.addEventListener('click', () => {
-//     const modals = document.querySelectorAll('#myForm.active')
-//     modals.forEach(modal => {
-//         closeModal(modal);
-//     })
-// });
+
 
 // adding a click eventListener to manBtn
 manBtn.addEventListener('click', openMan);
@@ -119,8 +113,8 @@ function startTimer() {
     // check if time runs out
     if (seconds == 0) {
         // do some function to say you lost
-        alert('You lost!');
-        document.getElementById('retry').innerHTML;
+        window.location.reload();
+        
         // Show a pop-up that says play again / take me back to the main page
 
         document.getElementById('time-counter').innerHTML = '0';
@@ -154,6 +148,7 @@ function startGame(level) {
 function relaod() {
     // document.getElementById("play-bTn").window.location.reload();
 }
+
 
 //function to display the instructions div
 function openMan() {

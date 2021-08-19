@@ -101,19 +101,15 @@
                     <!--Modal content-->
                     <div class="modal-header">
                         <div class="title">Congratulations!</div>
-                        <button data-play-button class="play-bTn" onclick="reload()">Play Again</button>
+                        <button type="button" class="play-bTn" onclick="location.reload()">Home Page</button>
                     </div>
                     <div class="modal-body">
                         <p>You have found all the matching Cards and you have Won!</p>
                         <img src="https://media.giphy.com/media/DgLwPZVu5tT32/source.gif">
                     </div>
-                    <button id="btn.retry" class="retry" onclick="tryAgain()">Try Again</button>
+                    
                 </div>
-                <div>
-                    <p id="retry">
-                        Ouch you ran out of time but you almost got it!
-                    </p>
-                </div>
+                
             </section>
             <!--This is the game holder section,loaded with images to display-->
             <section id="game-box" class="game">
@@ -187,6 +183,10 @@
                         <img class="front-face" src="./assets/images/fantasy-.jpg" height="100" width="100" alt="">
                         <img class="back-face" src="./assets/images/surreal.jpg" height="100" width="100" alt="">
                     </div>
+                    <button type="button" id="btn.retry" class="retry" onclick="location.reload()">Home Page</button>
+                </div>
+                <div>
+                    <button type="button" id="refresh" onclick="homePage()">Main Page</button>
                 </div>
             </section>
             <footer>
