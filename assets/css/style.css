@@ -90,7 +90,7 @@ p {
   background-color: rgba(46, 61, 73, 0.5);
   display: none;
 }
-.modal-header .title {
+.modal-header .title h2 {
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
@@ -101,9 +101,11 @@ p {
   color: whitesmoke;
 }
 .modal .play {
-  font-weight: 100;
-  font-size: 0.8rem;
-  float: right;
+  font-weight: 200;
+font-size: 1.1rem;
+float: right;
+margin: 0 auto;
+margin-left: 10em;
 }
 
 .instruction-item:hover {
@@ -431,7 +433,13 @@ p {
       padding-top: 9em;
       padding-left: 7em;
   }
-
+  .modal .play {
+    font-weight: 200;
+  font-size: 1.1rem;
+  float: right;
+  margin: 0 auto;
+  margin-left: 5em;
+  }
  
 
   .game_container {
