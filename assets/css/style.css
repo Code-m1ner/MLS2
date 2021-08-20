@@ -96,16 +96,15 @@ p {
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid black;
+  color: white;
 }
 .modal-body p{
   color: whitesmoke;
 }
 .modal .play {
   font-weight: 200;
-font-size: 1.1rem;
-float: right;
-margin: 0 auto;
-margin-left: 10em;
+  font-size: 1.1rem;
+  margin-left: 10em;
 }
 
 .instruction-item:hover {
@@ -459,7 +458,14 @@ margin-left: 10em;
     margin-top: 25%;
     margin-bottom: 15%;
   }
-
+  .modal {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+  }
+  .modal-body img {
+    width: 300px;
+  }
   
 
   .button {
