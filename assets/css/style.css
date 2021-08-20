@@ -435,9 +435,9 @@ p {
  
 
   .game_container {
-      height: 36em;
-      width: 470px;
-      justify-content: safe;
+    height: 38em;
+    width: 500px;
+    justify-content: left;
   }
   .front-face,
   .back-face {
@@ -473,10 +473,10 @@ p {
   }
 
   .game_container {
-      height: 36em;
-      width: 350px;
-      padding: 0;
-      justify-content: safe;
+    height: 36em;
+    width: 400px;
+    padding: 0;
+    justify-content: left
   }
   .front-face,
   .back-face {
