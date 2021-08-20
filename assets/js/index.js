@@ -144,12 +144,6 @@ function startGame(level) {
     );
 }
 
-// Play again function on the win game mode button
-function relaod() {
-    // document.getElementById("play-bTn").window.location.reload();
-}
-
-
 //function to display the instructions div
 function openMan() {
     manual.style.display = 'block';

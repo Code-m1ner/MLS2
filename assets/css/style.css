@@ -72,9 +72,7 @@ p {
   display: none;
 }
 
-#retry {
-  display: none;
-}
+
 
 /*styling the modal win div*/
 .modal {
@@ -92,13 +90,20 @@ p {
   background-color: rgba(46, 61, 73, 0.5);
   display: none;
 }
-.modal-header .play-bTn {
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: orangered;
+.modal-header .title {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
 }
 .modal-body p{
   color: whitesmoke;
+}
+.modal .play {
+  font-weight: 100;
+  font-size: 0.8rem;
+  float: right;
 }
 
 .instruction-item:hover {
@@ -203,8 +208,9 @@ p {
   background: #007c4e;
 }
 .refresh{
-  font-size: 40px;
+  font-size: 20px;
   margin: auto;
+  display: none;
 }
 .mode {
   display: none;
