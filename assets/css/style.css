@@ -391,13 +391,6 @@ p {
   footer {
     margin-top: 10%;
   }
-  .menu {
-      height: 100%;
-      width: 100%;
-  }
-  .menu li {
-      padding: 0;
-  }
 
   .button {
       padding: 0.9em 0.9em;
@@ -411,15 +404,9 @@ p {
       padding-left: 30em;
   }
 
-  .score-panel {
-      font-size: 1.4em;
-      padding: 1em 0 2em;
-      padding-left: 24.5em;
-  }
-
   .game_container {
       height: 38em;
-      width: 400px;
+      width: 370px;
   }
   .front-face,
   .back-face {
@@ -434,14 +421,6 @@ p {
     margin-bottom: 10%;
   }
 
-  .menu {
-      height: 100%;
-      width: 100%;
-  }
-  .menu li {
-      padding: 0;
-  }
-
   .button {
       padding: 0.9em 0.9em;
       margin-top: 10%;
@@ -453,17 +432,11 @@ p {
       padding-left: 7em;
   }
 
-  .score-panel {
-      font-size: 1.4em;
-      padding: 1em 0 2em;
-      padding-left: 0px;
-      padding-left: 9em;
-  }
+ 
 
   .game_container {
       height: 36em;
-      width: 100%;
-      padding: 0;
+      width: 470px;
       justify-content: safe;
   }
   .front-face,
