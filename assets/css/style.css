@@ -452,13 +452,7 @@ p {
     margin-bottom: 15%;
   }
 
-  .menu {
-      height: 100%;
-      width: 100%;
-  }
-  .menu li {
-      padding: 0;
-  }
+  
 
   .button {
       padding: 0.9em 0.9em;
@@ -480,7 +474,7 @@ p {
 
   .game_container {
       height: 36em;
-      width: 100%;
+      width: 350px;
       padding: 0;
       justify-content: safe;
   }
