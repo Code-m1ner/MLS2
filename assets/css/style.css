@@ -419,8 +419,7 @@ p {
 
   .game_container {
       height: 38em;
-      width: 100%;
-      padding: 0;
+      width: 400px;
   }
   .front-face,
   .back-face {
