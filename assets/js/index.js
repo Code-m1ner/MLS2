@@ -142,6 +142,7 @@ function startGame(level) {
         startTimer, 
         1000
     );
+
 }
 
 //function to display the instructions div
