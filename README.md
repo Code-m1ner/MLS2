@@ -366,22 +366,22 @@ I used GitHub pages to deploy my final project to the cloud. To do this I had to
 Please fine below a screenshot of each page:
 
 Home page web UI:
-![home page web preview](assets/responsive/index-page.png)
+![home page web preview](assets/responsive/web-vieindex.png)
 
 Home page mobile UI:
-![home page mobile preview](assets/responsive/index-mobile-page.png)
+![home page mobile preview](assets/responsive/index-page.png)
 
 Start game page web UI:
-![game page web preview](assets/responsive/web-viegame.png)
+![game page web preview](assets/responsive/start-game-web-preview.png)
 
 Start game page mobile UI:
-![game page mobile preview](assets/responsive/view-mobie)
+![game page mobile preview](assets/responsive/start-game-mobile-previw.png)
 
-Instructions button display one of the elements UI:
-![mid game page web preview](assets/responsive/click-a-card.PNG)
+Start game button display the elements expected UI:
+![mid game page web preview](assets/responsive/difficulty-level-example.PNG)
 
-Matched Cards UI:
-![mid game page preview](assets/responsive/match-the-cards.PNG)
+Time counter UI:
+![mid game page preview](assets/responsive/time-management.PNG)
 
 Winning game page:
 ![winning page preview](assets/responsive/won-game.png)
