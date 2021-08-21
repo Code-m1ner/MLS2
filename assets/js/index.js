@@ -21,9 +21,9 @@ let countdown = 4;
 // Shuffle cards
 (function shuffle() {
     cards.forEach(card => {
-        let randompos = Math.floor(Math.random() * 12)
+        let randompos = Math.floor(Math.random() * 12);
         card.style.order = randompos;
-    })
+    });
 })();
 
 cards.forEach(
@@ -113,7 +113,7 @@ function startTimer() {
     // check if time runs out
     if (seconds == 0) {
         // do some function to say you lost
-        window.location.reload();
+        document.getElementById('loose-game-modal').style.display = 'block';
         
         // Show a pop-up that says play again / take me back to the main page
 
@@ -130,7 +130,7 @@ function startGame(level) {
     } else {
         seconds = 30;
     }
-    // Adjust hte heading styling
+    // Adjust the heading styling
     document.getElementById('heading-context').style.marginTop = '2%';
     document.getElementById('heading-context').style.marginBottom = '0px';
     // Hide main menu
