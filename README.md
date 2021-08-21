@@ -7,7 +7,7 @@ This game will demonstrate basic JavaScript functionality.
 
 A live website can be found [here](https://rj12-art.github.io/MLS2/).
 
-![website preview](assets/images/responsive)
+![website preview](assets/responsive/responsive.png)
 
 # Table of Contents
 
@@ -36,7 +36,7 @@ A live website can be found [here](https://rj12-art.github.io/MLS2/).
 
 [Go to the top](#table-of-contents)
 
-Just by the titlie of the game it clearify's a player to get his mind cleared up for some mind image capturing since the game involves memorizing the first card and trying to flip random card to find the matching one.
+Just by the titlie of the game it tells a player that the game is mind tricking so they should get their mind ready for some mind image capturing since the game involves memorizing the first card and trying to flip random card to find the matching one.
 
 <a name="strategy"></a>
 
@@ -107,7 +107,8 @@ As I labelled a couple of features from the strategy table. I will phase this pr
 
 ### Phase 2
 
--   Caption for the win game with a pop up div
+-   Caption for the win game with a pop up div congratulating a player for the good effort they have made to win.
+-   Caption for the loose game with a pop up div extending my misery to the player for the loose despite their hard work on trying to win.
 
 
 <a name="structure"></a>
@@ -131,15 +132,18 @@ It is really important to include responsive design in this project as many user
 
 I used [Balsamiq](https://balsamiq.com/) to create my wireframes as this gives the template of the UI. This also shows where all elements will be placed within the screen.
 
-There are 2 versions of each wireframe as one shows the design on a web browser and the other shows a mobile browser format.
+There are 3 versions of the overall design of the project with the wireframe as the first one shows the design on a web browser wehn all the main three home page buttons are clicked and this responds to all screen displays, second one shows the game on runtime after the user as cliked a "Start Gmae" button and has chosen the game level. The thired one other shows a mobile browser format but displaying how the home page reviews when neither of the three buttons are clicked. Both have a commenton a yellow note explaining the previews present.
 
 ### Wire-frames
 
-Web browser index page:
-[![index_web](documentation-assets/wireframe-images/index_web.png)](documentation-assets/wireframe-images/index_web.ng)
+Web browser index page (When the home page buttons are cliked):
+[![index_web](assets/wireframes/buttons-clicked.png)
+
+Web browser index page (When the "Start Game"button as been clicked and the game is on run time):
+[![index_web](assets/wireframes/game-is-played.png)
 
 Mobile index page:
-[![index_mobile](documentation-assets/wireframe-images/index_mobile.png)](documentation-assets/wireframe-images/index_mobile.pg)
+[![index_mobile](assets/wireframes/no-buttons-clicked.png)
 
 <a name="surface"></a>
 
@@ -366,34 +370,30 @@ I used GitHub pages to deploy my final project to the cloud. To do this I had to
 Please fine below a screenshot of each page:
 
 Home page web UI:
-![home page web preview](assets/images/index_page_end_product.)
+![home page web preview](assets/responsive/index-page.png)
 
 Home page mobile UI:
-![home page mobile preview](assets/images/index_page_mobile_ep.)
+![home page mobile preview](assets/responsive/index-mobile-page.png)
 
 Start game page web UI:
-![game page web preview](assets/images/game_page_end_product.)
+![game page web preview](assets/responsive/web-viegame.png)
 
 Start game page mobile UI:
-![game page mobile preview](assets/images/start_game_mobile_ep.)
+![game page mobile preview](assets/responsive/view-mobie)
 
-Mid game page web UI:
-![mid game page web preview](assets/images/mid_game_page_end_product.)
+Instructions button display one of the elements UI:
+![mid game page web preview](assets/responsive/click-a-card.PNG)
 
-Mid game page mobile UI:
-![mid game page mobile preview](assets/images/mid_game_mobile_ep.)
+Matched Cards UI:
+![mid game page preview](assets/responsive/match-the-cards.PNG)
 
-Winning page web:
-![winning page web preview](assets/images/winning_gif_end_product.)
+Winning game page:
+![winning page preview](assets/responsive/won-game.png)
 
-Winning page mobile:
-![winning page mobile preview](assets/images/winning_page_mobile_ep.)
+Lost game page:
+![winning page preview](assets/responsive/lost-game.png)
 
-Losing page web:
-![losing page web preview](assets/images/losing_gif_end_product.png)
 
-Losing page mobile:
-![losing page mobile preview](assets/images/losing_page_mobile_ep.png)
 
 <a name="known-bugs"></a>
 
@@ -401,7 +401,7 @@ Losing page mobile:
 
 [Go to the top](#table-of-contents)
 
--   The two unmatched cards do not unflip as the function instructs but it's not a bug to be noticed immediately because I think some code over-rides the other after some time of playing.
+-   The two unmatched cards do not unflip as the function instructs but it's not a bug to be noticed immediately because I think some code over-rides the other after some time of playing. I finally found out what was a problem and solved it which was the case on the data-type being repeated on two divs containing the fantasy card.  
 
 -   The card's mobile view wasn't well responsive with firefox browser and google crome then I had it fixed by adding justify content left and exact width for both screen displays .
 
