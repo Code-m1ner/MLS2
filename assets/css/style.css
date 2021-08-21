@@ -55,7 +55,7 @@ p {
   border-radius: 10px;
   padding: 2.5%;
 }
-
+/*This is the styling for the level's pop up div*/
 .levels{
   position: fixed;
   z-index: 10;
@@ -72,43 +72,6 @@ p {
   display: none;
 }
 
-
-
-/*styling the modal win div*/
-.modal {
-  position: fixed;
-  z-index: 10;
-  left: 50%;
-  top: 50%;
-  width: 500px;
-  max-width: 80%;
-  border: 1px solid black;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-  transition: 200ms ease-in-out;
-  background-color:white;
-  background-color: rgba(46, 61, 73, 0.5);
-  display: none;
-}
-.modal-header .title h2 {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid black;
-  color: white;
-}
-.modal-body p{
-  color: whitesmoke;
-}
-.modal .play {
-  font-weight: 200;
-  font-size: 1.1rem;
-}
-
-.instruction-item:hover {
-  cursor: pointer;
-}
 
 /*styling the instruction's pop up div*/
 .manual {
@@ -150,7 +113,46 @@ p {
   font-weight: 100;
   font-size: 0.8rem;
 }
+.instruction-item:hover {
+  cursor: pointer;
+}
 
+
+
+/*styling the modal win div*/
+.modal {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  max-width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  background-color:white;
+  background-color: rgba(46, 61, 73, 0.5);
+  display: none;
+}
+.modal-header .title h2 {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  color: white;
+}
+.modal-body p{
+  color: whitesmoke;
+}
+.modal .play {
+  font-weight: 200;
+  font-size: 1.1rem;
+  float: right;
+}
+
+/*The lost-modal pop up div styling */
 .retry{
   font-size: 1.1rem;
   font-weight: bold;
