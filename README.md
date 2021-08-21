@@ -390,7 +390,6 @@ Lost game page:
 ![winning page preview](assets/responsive/lost-game.png)
 
 
-
 <a name="known-bugs"></a>
 
 # 8. Known Bugs
