@@ -497,7 +497,7 @@ p {
   }
   .modal {
     position: fixed;
-    left: 50%;
+    left: 45%;
     top: 40%;
   }
   .modal-body img {
