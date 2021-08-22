@@ -365,15 +365,6 @@ I used GitHub pages to deploy my final project to the cloud. To do this I had to
 
 Please fine below a screenshot of each page:
 
-Home page web UI:
-![home page web preview](assets/images/index_page_end_product.png)
-
-Home page mobile UI:
-![home page mobile preview](assets/images/index_page_mobile_ep.png)
-
-Start game page web UI:
-![game page web preview](assets/images/game_page_end_product.png)
-
 Start game page mobile UI:
 ![game page mobile preview](assets/responsive/web-vieindex.png)
 
@@ -397,6 +388,7 @@ Won page:
 
 Losing page :
 ![losing page preview](assets/responsive/lost-game.png)
+
 
 
 <a name="known-bugs"></a>
