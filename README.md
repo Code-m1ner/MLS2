@@ -245,12 +245,12 @@ I had no errors in the index and start_game page.
 I used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
 I had no errors in my CSS file.
 
-![css validator]
+![css validator](assets/responsive/wc3-css-alidator-results.png)
 
 I used [JS Hint](https://jshint.com/) to check for any errors within my JavaScript file.
 I had no errors in my JavaScript files.
 
-![javascript validator]
+![javascript validator](assets/responsive/js-hint.png)
 
 ## Manual Testing
 
@@ -366,28 +366,37 @@ I used GitHub pages to deploy my final project to the cloud. To do this I had to
 Please fine below a screenshot of each page:
 
 Home page web UI:
-![home page web preview](assets/responsive/web-vieindex.png)
+![home page web preview](assets/images/index_page_end_product.png)
 
 Home page mobile UI:
-![home page mobile preview](assets/responsive/index-page.png)
+![home page mobile preview](assets/images/index_page_mobile_ep.png)
 
 Start game page web UI:
-![game page web preview](assets/responsive/start-game-web-preview.png)
+![game page web preview](assets/images/game_page_end_product.png)
 
 Start game page mobile UI:
-![game page mobile preview](assets/responsive/start-game-mobile-previw.png)
+![game page mobile preview](assets/responsive/web-vieindex.png)
 
-Start game button display the elements expected UI:
-![mid game page web preview](assets/responsive/difficulty-level-example.PNG)
+Home page web UI:
+![home page web preview](assets/responsive/index-page.png)
 
-Time counter UI:
-![mid game page preview](assets/responsive/time-management.PNG)
+start game page web UI:
+![start game page web preview](assets/responsive/start-game-web-preview.png)
 
-Winning game page:
-![winning page preview](assets/responsive/won-game.png)
+Start game page mobile:
+![start game page mobile preview](assets/responsive/start-game-mobile-previw.png)
 
-Lost game page:
-![winning page preview](assets/responsive/lost-game.png)
+Winning page mobile:
+![difficult level page preview](assets/responsive/difficulty-level-example.PNG)
+
+Match page preview:
+![match page preview](assets/responsive/match-the-cards.PNG)
+
+Won page:
+![won page preview](assets/responsive/won-game.png)
+
+Losing page :
+![losing page preview](assets/responsive/lost-game.png)
 
 
 <a name="known-bugs"></a>
@@ -396,11 +405,11 @@ Lost game page:
 
 [Go to the top](#table-of-contents)
 
--   The two unmatched cards do not unflip as the function instructs but it's not a bug to be noticed immediately because I think some code over-rides the other after some time of playing. I finally found out what was a problem and solved it which was the case on the data-type being repeated on two divs containing the fantasy card.  
+-   There were cards that weren't responsive to the click function because they were matched even though they were different and this was because they shared the same data-type. I finally found out what was a problem and solved it which was the case on the data-type being repeated on two divs containing the fantasy card.  
 
 -   The card's mobile view wasn't well responsive with firefox browser and google crome then I had it fixed by adding justify content left and exact width for both screen displays .
 
--   The form pop up div can only be closed by clicking on the close button.
+-   The game cards take some time to load when openned with a new device for the first time and after it all loads to functions without problem.
 
 <a name="credits"></a>
 
