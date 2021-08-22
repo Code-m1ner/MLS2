@@ -133,6 +133,7 @@ p {
   transition: 200ms ease-in-out;
   background-color:white;
   background-color: rgba(46, 61, 73, 0.5);
+  opacity: 10;
   display: none;
 }
 .modal-header .title h2 {
@@ -149,7 +150,7 @@ p {
 .modal .play {
   font-weight: 200;
   font-size: 1.1rem;
-  float: right;
+  margin-left: 8em;
 }
 
 /*The lost-modal pop up div styling */
@@ -166,7 +167,8 @@ p {
   max-width: 80%;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: rgba(46, 61, 73, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 10;
 }
 .lost-modal {
   padding: 10px 15px;
@@ -175,8 +177,10 @@ p {
   padding: 10px;
   overflow: auto;
 }
-.playAgain{
-  float: right;
+
+.play{
+  margin-left: 10em;
+font-size: 1em;
 }
 .home{
   background-color: coral;
@@ -500,17 +504,26 @@ p {
   .modal {
     position: fixed;
     left: 45%;
-    top: 40%;
+    top: 35%;
   }
   .modal-body img {
     width: 300px;
+  }
+  .modal .play {
+    font-weight: 200;
+    font-size: 1.1rem;
+    margin-left: 6em;
   }
   .retry{
     position: fixed;
     top: 18%;
     left: 10%;
   }
-  
+  /*A home page button redirector*/
+  .play{
+    margin-left: 6em;
+    font-size: 1em;
+  }
 
   .button {
       padding: 0.9em 0.9em;
