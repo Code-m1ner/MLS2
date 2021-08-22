@@ -365,11 +365,11 @@ I used GitHub pages to deploy my final project to the cloud. To do this I had to
 
 Please fine below a screenshot of each page:
 
-Start game page mobile UI:
-![game page mobile preview](assets/responsive/web-vieindex.png)
-
 Home page web UI:
-![home page web preview](assets/responsive/index-page.png)
+![home page web preview](assets/responsive/web-vieindex.png)
+
+Home page mobile UI:
+![home page mobile preview](assets/responsive/index-page.png)
 
 start game page web UI:
 ![start game page web preview](assets/responsive/start-game-web-preview.png)
@@ -377,8 +377,8 @@ start game page web UI:
 Start game page mobile:
 ![start game page mobile preview](assets/responsive/start-game-mobile-previw.png)
 
-Winning page mobile:
-![difficult level page preview](assets/responsive/difficulty-level-example.PNG)
+Level option page mobile:
+![level option page preview](assets/responsive/difficulty-level-example.PNG)
 
 Match page preview:
 ![match page preview](assets/responsive/match-the-cards.PNG)
