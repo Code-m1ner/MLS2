@@ -5,7 +5,7 @@
 Welcome to my second project. This project is a memory game that involves programming languages like HTML5, CSS3 and JavaScript.
 This game will demonstrate basic JavaScript functionality.
 
-A live website can be found [here](https://rj12-art.github.io/MLS2/).
+A live website can be found [here](https://code-m1ner.github.io/MLS2/).
 
 ![website preview](assets/responsive/responsive.png)
 
